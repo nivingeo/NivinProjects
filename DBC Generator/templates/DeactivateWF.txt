@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script SYSTEM "script.dtd">
+
+<script author="VDJ" scriptname="Deactivate WF">
+  <description>Deactivate WF $wf</description>
+	<statements>
+		<freeform description="Deactivate WF $wf">
+			<sql target="all">   
+				update wfprocess set active = 0 where processname = '$wf' and active = 1;
+			</sql>
+		</freeform>
+	</statements>
+</script>
+    

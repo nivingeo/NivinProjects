@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updatescript version="7.1.0.0">
+	<app apptype="webclient" id="plusgqrp">
+		<add before="apa_sias_links_001" container="header1_10" control="textbox">
+			<set property="dataattribute" value="SFSSPFOLDERPATH"/>
+			<set property="id" value="1660695123632"/>
+			<set property="inputmode" value="readonly"/>
+			<set property="menutype" value="LSHP"/>
+		</add>
+	</app>
+</updatescript>

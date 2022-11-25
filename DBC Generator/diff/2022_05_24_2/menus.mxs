@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updatescript version="7.1.0.0">
+	<systemlib apptype="webclient" id="menus">
+		<add before="LAUNCH" container="menus" control="menu">
+			<set property="id" value="LSHP"/>
+		</add>
+		<add container="LSHP" control="menuitem">
+			<set property="event" value="sfslshp"/>
+			<set property="id" value="launch_sharepoint"/>
+			<set property="image" value="action_insert_launch.gif"/>
+			<set property="label" value="Open Sharepoint"/>
+		</add>
+	</systemlib>
+</updatescript>

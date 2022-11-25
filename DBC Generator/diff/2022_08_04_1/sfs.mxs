@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updatescript version="6.0.0">
+	<app apptype="webclient" id="sfs">
+		<modify control="results_showlist">
+			<clear property="startempty"/>
+		</modify>
+		<remove container="results_showlist_tablebody" control="1658810364664"/>
+		<remove container="sfs303" control="sfs15"/>
+	</app>
+</updatescript>

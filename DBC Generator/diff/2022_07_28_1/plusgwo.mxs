@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updatescript version="7.1.0.0">
+	<app apptype="webclient" id="plusgwo">
+		<add before="assignments_assignments_table_tablebody_crew2" container="assignments_assignments_table_tablebody" control="tablecol">
+			<set property="dataattribute" value="amcrew"/>
+			<set property="id" value="1658969823641"/>
+			<set property="linkedcontrolid" value="1645484394410"/>
+		</add>
+		<add before="1658969823641" container="assignments_assignments_table_tablebody" control="tablecol">
+			<set property="dataattribute" value="amcrewtype"/>
+			<set property="id" value="1658969798418"/>
+			<set property="linkedcontrolid" value="assignments_assignments_table_1_grid1_4"/>
+		</add>
+		<modify control="assignments_assignments_table_tablebody_crew2">
+			<set property="dataattribute" value="labor"/>
+		</modify>
+		<modify control="failrep_failure_report_tablebody">
+			<set property="filterable" value="false"/>
+		</modify>
+		<remove container="assignments_assignments_table_tablebody" control="1647910936266"/>
+		<remove container="assignments_assignments_table_tablebody" control="1648100742095"/>
+	</app>
+</updatescript>

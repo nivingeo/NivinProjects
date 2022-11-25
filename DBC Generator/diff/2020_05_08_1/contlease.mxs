@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updatescript version="7.1.0.0">
+	<app apptype="webclient" id="contlease">
+		<modify control="contlease">
+			<set property="ismobile" value="false"/>
+		</modify>
+		<add container="contlease" control="configurationblock">
+			<set property="id" value="datastore_configurationblock"/>
+		</add>
+		<move before="datastore_configurationblock" child="applyprad" container="contlease"/>
+		<move before="applyprad" child="assocsla" container="contlease"/>
+		<move before="assocsla" child="revhist" container="contlease"/>
+		<move before="revhist" child="selectsla" container="contlease"/>
+		<move before="selectsla" child="venitems" container="contlease"/>
+		<move before="selectleaseendassets" child="selectcommodities" container="contlease"/>
+		<move before="selectcommodities" child="selectasset" container="contlease"/>
+		<move before="selectasset" child="chgst" container="contlease"/>
+		<move before="chgst" child="status" container="contlease"/>
+		<move before="status" child="viewhist" container="contlease"/>
+		<move before="viewhist" child="selectsites" container="contlease"/>
+		<move before="retnasst" child="revcont" container="contlease"/>
+		<move before="pmtsched" child="authsites" container="contlease"/>
+		<modify control="mainrec">
+			<set property="scroll" value="false"/>
+		</modify>
+		<add container="mainrec" control="include">
+			<set property="controltoclone" value="pageFooter"/>
+			<set property="id" value="INCLUDE-pageFooter"/>
+		</add>
+		<add before="clientarea" container="mainrec" control="include">
+			<set property="controltoclone" value="pageHeader"/>
+			<set property="id" value="INCLUDE-pageHeader"/>
+		</add>
+		<add before="associatedassets" container="maintabs" control="tab">
+			<set property="id" value="extensions"/>
+			<set property="label" value="Extensions"/>
+			<set property="sigoption" value="DETHIDEEXT"/>
+		</add>
+		<add container="extensions" control="section">
+			<set property="border" value="true"/>
+			<set property="id" value="extensions_grid1"/>
+		</add>
+		<add container="extensions_grid1" control="sectionrow">
+			<set property="id" value="extensions_grid1_row1"/>
+		</add>
+		<add container="extensions_grid1_row1" control="sectioncol">
+			<set property="id" value="extensions_grid1_row1_col1"/>
+		</add>
+		<add container="extensions_grid1_row1_col1" control="section">
+			<set property="id" value="extensions_grid1a"/>
+		</add>
+		<add container="extensions_grid1a" control="multiparttextbox">
+			<set property="dataattribute" value="contractnum"/>
+			<set property="descdataattribute" value="description"/>
+			<set property="descinputmode" value="readonly"/>
+			<set property="id" value="extensions_grid1_1"/>
+			<set property="inputmode" value="readonly"/>
+			<set property="longdescription" value="true"/>
+		</add>
+		<add container="extensions_grid1a" control="multiparttextbox">
+			<set property="dataattribute" value="revisionnum"/>
+			<set property="descdataattribute" value="revcomments"/>
+			<set property="descinputmode" value="readonly"/>
+			<set property="desclookup" value="longdesc"/>
+			<set property="id" value="extensions_grid1_2"/>
+			<set property="inputmode" value="readonly"/>
+		</add>
+		<add container="extensions_grid1a" control="multiparttextbox">
+			<set property="dataattribute" value="detleasetype"/>
+			<set property="descdataattribute" value="DETLEASETYPE.DESCRIPTION"/>
+			<set property="descinputmode" value="readonly"/>
+			<set property="id" value="extensions1588815115116"/>
+			<set property="inputmode" value="readonly"/>
+		</add>
+		<add container="extensions_grid1_row1" control="sectioncol">
+			<set property="id" value="extensions_grid1_row1_col3"/>
+		</add>
+		<add container="extensions_grid1_row1_col3" control="section">
+			<set property="id" value="extensions_grid1c"/>
+		</add>
+		<add container="extensions_grid1c" control="textbox">
+			<set property="dataattribute" value="status"/>
+			<set property="id" value="extensions1588815514845"/>
+			<set property="inputmode" value="readonly"/>
+		</add>
+		<add container="extensions_grid1c" control="textbox">
+			<set property="dataattribute" value="statusdate"/>
+			<set property="id" value="extensions_grid1_3"/>
+			<set property="inputmode" value="readonly"/>
+		</add>
+		<add container="extensions" control="table">
+			<set property="id" value="1588556863885"/>
+			<set property="label" value="Extendable Options"/>
+			<set property="relationship" value="DETLEASEOPTIONS"/>
+		</add>
+		<add container="1588556863885" control="defaultvalue">
+			<set property="dataattribute" value="detrevisionnum"/>
+			<set property="fromattribute" value="REVISIONNUM"/>
+			<set property="fromdatasrc" value="MAINRECORD"/>
+			<set property="id" value="1588832639600"/>
+		</add>
+		<add container="1588556863885" control="defaultvalue">
+			<set property="dataattribute" value="detCONTRACTNUM"/>
+			<set property="fromattribute" value="contractnum"/>
+			<set property="fromdatasrc" value="MAINRECORD"/>
+			<set property="id" value="1588832630364"/>
+		</add>
+		<add container="1588556863885" control="tablebody">
+			<set property="displayrowsperpage" value="12"/>
+			<set property="filterable" value="true"/>
+			<set property="id" value="15885568638852"/>
+		</add>
+		<add container="15885568638852" control="tablecol">
+			<set property="dataattribute" value="DETFURTHERTERM"/>
+			<set property="id" value="1588557100167"/>
+		</add>
+		<add container="15885568638852" control="tablecol">
+			<set property="dataattribute" value="DETYEARS"/>
+			<set property="id" value="1588557098245"/>
+		</add>
+		<add container="15885568638852" control="tablecol">
+			<set property="dataattribute" value="DETLASTDATE"/>
+			<set property="id" value="1588557137792"/>
+			<set property="lookup" value="datetime"/>
+		</add>
+		<add container="15885568638852" control="tablecol">
+			<set property="dataattribute" value="DETOPTIONFREE"/>
+			<set property="id" value="1588557012541"/>
+		</add>
+		<add container="15885568638852" control="tablecol">
+			<set property="dataattribute" value="DETOPTIONNUM"/>
+			<set property="id" value="ASd1"/>
+		</add>
+		<add container="15885568638852" control="tablecol">
+			<set property="filterable" value="false"/>
+			<set property="id" value="15885568639013"/>
+			<set property="mxevent" value="toggledeleterow"/>
+			<set property="mxevent_desc" value="Mark Row for Delete"/>
+			<set property="mxevent_icon" value="btn_garbage.gif"/>
+			<set property="sortable" value="false"/>
+			<set property="type" value="event"/>
+		</add>
+		<add container="1588556863885" control="buttongroup">
+			<set property="id" value="15885568639643"/>
+		</add>
+		<add container="15885568639643" control="pushbutton">
+			<set property="default" value="true"/>
+			<set property="id" value="15885568639645"/>
+			<set property="label" value="New Row"/>
+			<set property="mxevent" value="addrow"/>
+		</add>
+		<add before="results_showlist_tablebody_5" container="results_showlist_tablebody" control="tablecol">
+			<set property="dataattribute" value="detleasetype"/>
+			<set property="id" value="detleasetype"/>
+			<set property="inputmode" value="query"/>
+			<set property="lookup" value="VALUELIST"/>
+		</add>
+		<modify control="results_showlist_tablebody_1">
+			<clear property="hidden"/>
+		</modify>
+		<modify control="results_bookmark">
+			<clear property="hidden"/>
+		</modify>
+		<modify control="main_grid3a_row1_col1_section1">
+			<set property="label" value="Lessor Details"/>
+		</modify>
+		<modify control="mainsection_3_col1_1">
+			<set property="label" value="Lessor Name"/>
+		</modify>
+		<modify control="main_grid3b">
+			<set property="label" value="Other Details"/>
+		</modify>
+		<add before="main_grid3a_5" container="main_grid3b" control="textbox">
+			<set property="dataattribute" value="DETREFNO"/>
+			<set property="id" value="1588555186396"/>
+		</add>
+		<add before="1588555186396" container="main_grid3b" control="textbox">
+			<set property="dataattribute" value="DETRENTPAIDBY"/>
+			<set property="id" value="1588555232334"/>
+			<set property="lookup" value="VALUELIST"/>
+		</add>
+		<add before="1588555232334" container="main_grid3b" control="textbox">
+			<set property="dataattribute" value="DETRESPOFFICER"/>
+			<set property="id" value="1588555060658"/>
+		</add>
+		<add before="1588555060658" container="main_grid3b" control="textbox">
+			<set property="dataattribute" value="DETACTION"/>
+			<set property="id" value="1588554916105"/>
+			<set property="lookup" value="valuelist"/>
+		</add>
+		<add before="1588554916105" container="main_grid3b" control="checkbox">
+			<set property="dataattribute" value="EXTENDABLE"/>
+			<set property="id" value="1588554874149"/>
+		</add>
+		<add before="1588554874149" container="main_grid3b" control="checkbox">
+			<set property="dataattribute" value="DETPEPPERCORN"/>
+			<set property="id" value="1588557390261"/>
+		</add>
+		<add before="1588557390261" container="main_grid3b" control="checkbox">
+			<set property="dataattribute" value="DETREDFLAG"/>
+			<set property="id" value="1588554876071"/>
+		</add>
+		<modify control="main_grid3a_5">
+			<set property="sigoption" value="DETHIDE"/>
+		</modify>
+		<modify control="main_grid3b_5">
+			<set property="sigoption" value="DETHIDE"/>
+		</modify>
+		<modify control="main_grid3b_4">
+			<set property="sigoption" value="DETHIDE"/>
+		</modify>
+		<modify control="main_grid3b_3">
+			<set property="sigoption" value="DETHIDE"/>
+		</modify>
+		<modify control="main_grid3b_1">
+			<set property="sigoption" value="DETHIDE"/>
+		</modify>
+		<modify control="main_grid3b_2">
+			<set property="sigoption" value="DETHIDE"/>
+		</modify>
+		<modify control="main_grid3b_6">
+			<set property="size" value="33"/>
+		</modify>
+		<add container="main_grid1a" control="multiparttextbox">
+			<set property="dataattribute" value="detleasetype"/>
+			<set property="descdataattribute" value="DETLEASETYPE.DESCRIPTION"/>
+			<set property="descinputmode" value="readonly"/>
+			<set property="id" value="1588815115116"/>
+			<set property="lookup" value="valuelist"/>
+		</add>
+		<move child="main_grid1_3" container="main_grid1c"/>
+		<modify control="main_grid1_3">
+			<set property="dataattribute" value="statusdate"/>
+			<set property="inputmode" value="readonly"/>
+		</modify>
+		<add before="main_grid1_3" container="main_grid1c" control="textbox">
+			<set property="dataattribute" value="status"/>
+			<set property="id" value="1588815514845"/>
+			<set property="inputmode" value="readonly"/>
+		</add>
+		<move child="main_grid3a_row1" container="main_grid2"/>
+		<add before="main_grid3a_row1" container="main_grid2" control="sectionrow">
+			<set property="id" value="1588807946102"/>
+		</add>
+		<add container="1588807946102" control="sectioncol">
+			<set property="id" value="1588807960389"/>
+		</add>
+		<add container="1588807960389" control="section">
+			<set property="id" value="15885502333452"/>
+			<set property="label" value="School Details"/>
+		</add>
+		<add container="15885502333452" control="multiparttextbox">
+			<set property="applink" value="LOCATION"/>
+			<set property="dataattribute" value="DETSCHOOL"/>
+			<set property="descdataattribute" value="DETSCHOOL.DESCRIPTION"/>
+			<set property="descinputmode" value="readonly"/>
+			<set property="id" value="1588656040633"/>
+			<set property="lookup" value="LOCATIONS"/>
+			<set property="menutype" value="LOCATIONS"/>
+		</add>
+		<add container="15885502333452" control="multiparttextbox">
+			<set property="applink" value="LOCATION"/>
+			<set property="dataattribute" value="DETCAMPUS"/>
+			<set property="descdataattribute" value="DETCAMPUS.DESCRIPTION"/>
+			<set property="descinputmode" value="readonly"/>
+			<set property="id" value="1588656038790"/>
+			<set property="lookup" value="LOCATIONS"/>
+			<set property="menutype" value="LOCATIONS"/>
+		</add>
+		<add container="15885502333452" control="multiparttextbox">
+			<set property="applink" value="LOCATION"/>
+			<set property="dataattribute" value="DETSITE"/>
+			<set property="descdataattribute" value="DETSITE.DESCRIPTION"/>
+			<set property="descinputmode" value="readonly"/>
+			<set property="id" value="1588550667547"/>
+			<set property="lookup" value="LOCATIONS"/>
+			<set property="menutype" value="LOCATIONS"/>
+		</add>
+		<add container="15885502333452" control="textbox">
+			<set property="dataattribute" value="DETSCHOOLLGA.ALNVALUE"/>
+			<set property="id" value="1588551938544"/>
+			<set property="inputmode" value="readonly"/>
+			<set property="label" value="LGA"/>
+		</add>
+		<add container="15885502333452" control="textbox">
+			<set property="dataattribute" value="DETSCHOOLOWNERSHIP.ALNVALUE"/>
+			<set property="id" value="1588551300947"/>
+			<set property="inputmode" value="readonly"/>
+			<set property="label" value="Ownership"/>
+		</add>
+		<add container="15885502333452" control="textbox">
+			<set property="dataattribute" value="DETSCHOOLSITEAREA.NUMVALUE"/>
+			<set property="id" value="1588558829810"/>
+			<set property="label" value="Site Land Area"/>
+		</add>
+		<add container="1588807946102" control="sectioncol">
+			<set property="id" value="1588807946108"/>
+		</add>
+		<add container="1588807946108" control="section">
+			<set property="id" value="15885502333614"/>
+			<set property="label" value="Property Details"/>
+		</add>
+		<add container="15885502333614" control="multiparttextbox">
+			<set property="applink" value="SRVAD"/>
+			<set property="dataattribute" value="DETPROPERTYADDR"/>
+			<set property="descdataattribute" value="DETSRVAD.DESCRIPTION"/>
+			<set property="descinputmode" value="readonly"/>
+			<set property="id" value="1588550679280"/>
+			<set property="lookup" value="serviceaddress"/>
+			<set property="menutype" value="SERVICEADDRESS"/>
+		</add>
+		<add container="15885502333614" control="textbox">
+			<set property="dataattribute" value="DETSRVAD.CITY"/>
+			<set property="id" value="1588551313728"/>
+			<set property="inputmode" value="readonly"/>
+			<set property="label" value="Suburb"/>
+		</add>
+		<add container="15885502333614" control="textbox">
+			<set property="dataattribute" value="DETSRVAD.POSTALCODE"/>
+			<set property="id" value="1588551311352"/>
+			<set property="inputmode" value="readonly"/>
+			<set property="label" value="Postal Code"/>
+		</add>
+		<add container="main_grid2a" control="textbox">
+			<set property="dataattribute" value="purchaseagent"/>
+			<set property="id" value="1588549916891"/>
+			<set property="lookup" value="person"/>
+			<set property="sigoption" value="DETHIDE"/>
+		</add>
+		<add before="main_grid2a_2" container="main_grid2a" control="multilinetextbox">
+			<set property="columns" value="60"/>
+			<set property="dataattribute" value="DETCONTACT"/>
+			<set property="id" value="1588553185595"/>
+			<set property="rows" value="4"/>
+		</add>
+		<add before="1588553185595" container="main_grid2a" control="multilinetextbox">
+			<set property="columns" value="60"/>
+			<set property="dataattribute" value="DETPRIMARYNOTES"/>
+			<set property="id" value="1588552091669"/>
+			<set property="rows" value="4"/>
+		</add>
+		<add before="1588552091669" container="main_grid2a" control="textbox">
+			<set property="dataattribute" value="DETPRIMARY"/>
+			<set property="id" value="1588553089163"/>
+			<set property="size" value="53"/>
+		</add>
+		<add before="1588553089163" container="main_grid2a" control="multiparttextbox">
+			<set property="dataattribute" value="DETCLASS"/>
+			<set property="descdataattribute" value="DETCLASSDM.DESCRIPTION"/>
+			<set property="descinputmode" value="readonly"/>
+			<set property="id" value="1588577270392"/>
+			<set property="lookup" value="VALUELIST"/>
+		</add>
+		<add before="1588577270392" container="main_grid2a" control="multiparttextbox">
+			<set property="applink" value="COMPANY"/>
+			<set property="dataattribute" value="DETSUBLESSEE"/>
+			<set property="descdataattribute" value="DETCOMPSUBLESSEE.NAME"/>
+			<set property="descinputmode" value="readonly"/>
+			<set property="id" value="1588552907281"/>
+			<set property="lookup" value="COMPANIES"/>
+			<set property="menutype" value="NORMAL"/>
+		</add>
+		<add before="1588552907281" container="main_grid2a" control="multiparttextbox">
+			<set property="applink" value="COMPANY"/>
+			<set property="dataattribute" value="DETTENNANT"/>
+			<set property="descdataattribute" value="DETCOMPTENANT.NAME"/>
+			<set property="descinputmode" value="readonly"/>
+			<set property="id" value="1588553017141"/>
+			<set property="lookup" value="COMPANIES"/>
+			<set property="menutype" value="NORMAL"/>
+		</add>
+		<modify control="main_grid2a_2">
+			<set property="sigoption" value="DETHIDE"/>
+		</modify>
+		<modify control="main_grid2a_3">
+			<set property="sigoption" value="DETHIDE"/>
+		</modify>
+		<add container="main_grid2_row1_col2" control="section">
+			<set property="id" value="1588553413690"/>
+			<set property="label" value="Review Details"/>
+		</add>
+		<add container="1588553413690" control="checkbox">
+			<set property="dataattribute" value="DETREVIEW"/>
+			<set property="id" value="1588553543004"/>
+		</add>
+		<add container="1588553413690" control="textbox">
+			<set property="dataattribute" value="DETREVIEWDATE"/>
+			<set property="id" value="1588553428253"/>
+			<set property="lookup" value="DATELOOKUP"/>
+		</add>
+		<add container="1588553413690" control="textbox">
+			<set property="dataattribute" value="DETREVIEWMETHOD"/>
+			<set property="id" value="1588553572707"/>
+			<set property="lookup" value="VALUELIST"/>
+		</add>
+		<modify control="properties">
+			<set property="sigoption" value="DETHIDE"/>
+		</modify>
+		<modify control="main_grid4">
+			<clear property="collapsable"/>
+		</modify>
+		<add container="contractlines_grid1_row1_col1" control="section">
+			<set property="id" value="contractlines_grid1a"/>
+		</add>
+		<move before="contractlines_grid1_2" child="contractlines_grid1_1" container="contractlines_grid1a"/>
+		<modify control="contractlines_grid1_1">
+			<set property="descinputmode" value="readonly"/>
+			<set property="inputmode" value="readonly"/>
+		</modify>
+		<move before="contractlines1588815115116" child="contractlines_grid1_2" container="contractlines_grid1a"/>
+		<modify control="contractlines_grid1_2">
+			<set property="descinputmode" value="readonly"/>
+			<set property="inputmode" value="readonly"/>
+		</modify>
+		<add container="contractlines_grid1a" control="multiparttextbox">
+			<set property="dataattribute" value="detleasetype"/>
+			<set property="descdataattribute" value="DETLEASETYPE.DESCRIPTION"/>
+			<set property="descinputmode" value="readonly"/>
+			<set property="id" value="contractlines1588815115116"/>
+			<set property="inputmode" value="readonly"/>
+		</add>
+		<add before="contractlines_grid1_3" container="contractlines_grid1c" control="textbox">
+			<set property="dataattribute" value="status"/>
+			<set property="id" value="contractlines1588815514845"/>
+			<set property="inputmode" value="readonly"/>
+		</add>
+		<modify control="contractlines_grid1_3">
+			<set property="dataattribute" value="statusdate"/>
+			<clear property="lookup"/>
+			<set property="inputmode" value="readonly"/>
+		</modify>
+		<modify control="contractlines_contractline_table_tablebody_13">
+			<clear property="hidden"/>
+		</modify>
+		<add container="associatedassets_grid1a" control="multiparttextbox">
+			<set property="dataattribute" value="detleasetype"/>
+			<set property="descdataattribute" value="DETLEASETYPE.DESCRIPTION"/>
+			<set property="descinputmode" value="readonly"/>
+			<set property="id" value="associatedassets1588815115116"/>
+			<set property="inputmode" value="readonly"/>
+		</add>
+		<add before="associatedassets1588815115116" container="associatedassets_grid1a" control="multiparttextbox">
+			<set property="dataattribute" value="revisionnum"/>
+			<set property="descdataattribute" value="revcomments"/>
+			<set property="descinputmode" value="readonly"/>
+			<set property="desclookup" value="longdesc"/>
+			<set property="id" value="associatedassets_grid1_2"/>
+			<set property="inputmode" value="readonly"/>
+		</add>
+		<add before="associatedassets_grid1_2" container="associatedassets_grid1a" control="multiparttextbox">
+			<set property="dataattribute" value="contractnum"/>
+			<set property="descdataattribute" value="description"/>
+			<set property="descinputmode" value="readonly"/>
+			<set property="id" value="associatedassets_grid1_1"/>
+			<set property="inputmode" value="readonly"/>
+			<set property="longdescription" value="true"/>
+		</add>
+		<add container="associatedassets_grid1c" control="textbox">
+			<set property="dataattribute" value="statusdate"/>
+			<set property="id" value="associatedassets_grid1_3"/>
+			<set property="inputmode" value="readonly"/>
+		</add>
+		<add before="associatedassets_grid1_3" container="associatedassets_grid1c" control="textbox">
+			<set property="dataattribute" value="status"/>
+			<set property="id" value="associatedassets1588815514845"/>
+			<set property="inputmode" value="readonly"/>
+		</add>
+		<modify control="associatedassets_assetloc_table_tablebody_1">
+			<clear property="hidden"/>
+		</modify>
+		<modify control="associatedassets_assetloc_table_tablebody_13">
+			<clear property="hidden"/>
+		</modify>
+		<modify control="associatedassets_assetloc_grid5b_3">
+			<clear property="linkcontrolid"/>
+		</modify>
+		<modify control="associatedassets_assetloc_grid2c_2">
+			<set property="sigoption" value="DETHIDE"/>
+		</modify>
+		<add container="termcond_grid1a" control="multiparttextbox">
+			<set property="dataattribute" value="detleasetype"/>
+			<set property="descdataattribute" value="DETLEASETYPE.DESCRIPTION"/>
+			<set property="descinputmode" value="readonly"/>
+			<set property="id" value="termcond1588815115116"/>
+			<set property="inputmode" value="readonly"/>
+		</add>
+		<modify control="termcond_grid1_1">
+			<set property="descinputmode" value="readonly"/>
+			<set property="inputmode" value="readonly"/>
+			<set property="longdescription" value="true"/>
+		</modify>
+		<modify control="termcond_grid1_2">
+			<set property="descinputmode" value="readonly"/>
+			<set property="inputmode" value="readonly"/>
+		</modify>
+		<move child="termcond_grid1_3" container="termcond_grid1c"/>
+		<modify control="termcond_grid1_3">
+			<set property="dataattribute" value="statusdate"/>
+			<clear property="lookup"/>
+			<set property="inputmode" value="readonly"/>
+		</modify>
+		<add before="termcond_grid1_3" container="termcond_grid1c" control="textbox">
+			<set property="dataattribute" value="status"/>
+			<set property="id" value="termcond1588815514845"/>
+			<set property="inputmode" value="readonly"/>
+		</add>
+		<modify control="termcond_TermsTable_tablebody_1">
+			<clear property="hidden"/>
+		</modify>
+		<modify control="termcond_TermsTable_tablebody_6">
+			<clear property="hidden"/>
+		</modify>
+		<modify control="venitems_virtualset1_tablebody_1">
+			<clear property="hidden"/>
+		</modify>
+		<modify control="venitems_virtualset1_tablebody_2">
+			<clear property="readonly"/>
+		</modify>
+		<modify control="venitems_virtualset1_tablebody_3">
+			<clear property="readonly"/>
+		</modify>
+		<modify control="venitems_virtualset1_tablebody_4">
+			<clear property="readonly"/>
+		</modify>
+		<modify control="venitems_virtualset1_tablebody_6">
+			<clear property="readonly"/>
+		</modify>
+		<modify control="venitems_virtualset1_tablebody_7">
+			<clear property="readonly"/>
+		</modify>
+		<modify control="venitems_virtualset1_tablebody_8">
+			<clear property="readonly"/>
+		</modify>
+		<modify control="venitems_virtualset1_tablebody_9">
+			<clear property="readonly"/>
+		</modify>
+		<modify control="qbe_date_s1_r1_c1_s1_st1">
+			<clear property="hidelabel"/>
+			<clear property="label"/>
+		</modify>
+		<modify control="qbe_date_s1_r2_c1_s1_t1">
+			<clear property="span"/>
+			<set property="align" value="right"/>
+		</modify>
+		<modify control="qbe_date_s1_r3_c1_s1_t1">
+			<clear property="span"/>
+			<set property="align" value="right"/>
+		</modify>
+		<modify control="qbe_date_s1_r4_c1_s1_t1">
+			<clear property="span"/>
+			<set property="align" value="right"/>
+		</modify>
+		<add before="qbe_grid5_1_1_grid6_3" container="qbe_grid5_1_1_grid6" control="pushbutton">
+			<set property="id" value="qbe_revisebutton"/>
+			<set property="label" value="Revise"/>
+			<set property="menutype" value="SEARCHMOREREVISE"/>
+			<set property="targetid" value="searchmore"/>
+		</add>
+		<add before="qbe_revisebutton" container="qbe_grid5_1_1_grid6" control="pushbutton">
+			<set property="id" value="qbe_restoreappdefault_button"/>
+			<set property="label" value="Restore Application Defaults"/>
+			<set property="mxevent" value="qbeclear"/>
+		</add>
+		<modify control="changestatus_grid1_1_1_grid3_1">
+			<clear property="desclongdescreadonly"/>
+		</modify>
+		<modify control="chgst_contractlinestable_tablebody_1">
+			<clear property="hidden"/>
+		</modify>
+		<modify control="selectsla_sla_table_tablebody_1">
+			<clear property="hidden"/>
+		</modify>
+		<modify control="selectsites_site_table_tablebody_1">
+			<clear property="hidden"/>
+		</modify>
+		<modify control="authsites_contractauth_table_tablebody_1">
+			<clear property="hidden"/>
+		</modify>
+		<modify control="authsites_contractauth_table_tablebody_7">
+			<clear property="hidden"/>
+		</modify>
+		<modify control="authsites_contractauth_table_1_grid3_5">
+			<clear property="descsizeintable"/>
+		</modify>
+		<modify control="authsites_contractauth_table_1_grid3_1">
+			<clear property="descsizeintable"/>
+		</modify>
+		<modify control="assocsla_slacontract_table_tablebody_1">
+			<clear property="hidden"/>
+		</modify>
+		<modify control="assocsla_slacontract_table_tablebody_9">
+			<clear property="hidden"/>
+		</modify>
+		<modify control="selectcommodgrp_select_table_tablebody_1">
+			<clear property="hidden"/>
+		</modify>
+		<modify control="selectcommodities_select_table_tablebody_1">
+			<clear property="hidden"/>
+		</modify>
+		<modify control="pmtsched_grid1_1_1_pmtsched_tablebody_1">
+			<clear property="hidden"/>
+		</modify>
+		<modify control="pmtsched_grid1_1_1_pmtsched_tablebody_11">
+			<clear property="hidden"/>
+		</modify>
+		<add before="pmtsched_grid1_1_1_pmtsched_1_grid6_4" container="pmtsched_grid1_1_1_pmtsched_1_grid6_s1" control="textbox">
+			<set property="dataattribute" value="DETINITIRENT"/>
+			<set property="id" value="1588556265130"/>
+		</add>
+		<add before="pmtsched_grid1_1_1_pmtschedline_tablebody_6" container="pmtsched_grid1_1_1_pmtschedline_tablebody" control="tablecol">
+			<set property="dataattribute" value="SCHLEASEVIEW.DETINITIRENT"/>
+			<set property="id" value="1588556554010"/>
+			<set property="inputmode" value="readonly"/>
+		</add>
+		<modify control="pmtsched_grid1_1_1_pmtschedline_tablebody_1">
+			<clear property="hidden"/>
+		</modify>
+		<modify control="pmtsched_grid1_1_1_pmtschedline_tablebody_11">
+			<clear property="hidden"/>
+		</modify>
+		<add before="pmtsched_grid1_1_1_pmtschedline_1_grid6_4" container="pmtsched_grid1_1_1_pmtschedline_1_grid6_s1" control="textbox">
+			<set property="dataattribute" value="SCHLEASEVIEW.DETINITIRENT"/>
+			<set property="id" value="1588556442400"/>
+			<set property="inputmode" value="readonly"/>
+		</add>
+		<modify control="selectasset_pmtsched_tablebody_1">
+			<clear property="hidden"/>
+		</modify>
+		<modify control="selectasset_pmtsched_tablebody_5">
+			<clear property="hidden"/>
+		</modify>
+		<modify control="bookmarks_table_tablebody_delete">
+			<clear property="hidden"/>
+		</modify>
+		<modify control="list_changestatus_grid1_1_1_grid4_1">
+			<clear property="smartfilloff"/>
+		</modify>
+		<modify control="applyprad_contractline_table_tablebody_1">
+			<clear property="hidden"/>
+		</modify>
+		<modify control="selectleaseendassets_asset_table_tablebody_1">
+			<clear property="hidden"/>
+		</modify>
+		<remove container="contlease" control="detusercust"/>
+		<remove container="mainrec" control="pageheader"/>
+		<remove container="mainrec" control="pagefooter"/>
+		<remove container="maintabs" control="fincntrl_milestone"/>
+		<remove container="main" control="main_grid3"/>
+		<remove container="main_grid1c" control="main_grid1_4"/>
+		<remove container="main_grid1c" control="main_grid1_3a"/>
+		<remove container="main_grid2a" control="main_grid2a_4"/>
+		<remove container="contractlines_grid1_row1" control="contractlines_grid1_row1_col4"/>
+		<remove container="contractlines_grid1_row1_col1" control="ontractlines_grid1a"/>
+		<remove container="contractlines_grid1c" control="contractlines_grid1_3a"/>
+		<remove container="associatedassets_grid1_row1" control="associatedassets_grid1_row1_col2"/>
+		<remove container="associatedassets_grid1a" control="associatedassets_grid1a_1"/>
+		<remove container="associatedassets_grid1a" control="associatedassets_grid1a_2"/>
+		<remove container="associatedassets_grid1c" control="associatedassets_grid1c_2"/>
+		<remove container="associatedassets_grid1c" control="associatedassets_grid1c_1"/>
+		<remove container="termcond_grid1_row1" control="termcond_grid1_row1_col2"/>
+		<remove container="termcond_grid1c" control="termcond_grid1_5"/>
+		<remove container="termcond_grid1c" control="termcond_grid1_4"/>
+		<remove container="qbe_grid5_1_1_grid6" control="qbe_grid5_1_1_grid6_2"/>
+	</app>
+</updatescript>

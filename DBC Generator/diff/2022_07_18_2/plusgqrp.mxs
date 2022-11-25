@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updatescript version="7.1.0.0">
+	<app apptype="webclient" id="plusgqrp">
+		<add before="plusgregtab" container="maintabs" control="tab">
+			<set property="id" value="sfs"/>
+			<set property="label" value="SFS"/>
+		</add>
+		<add container="sfs" control="table">
+			<set property="id" value="HEADERDETAIL"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="parentdatasrc" value="MAINRECORD"/>
+			<set property="relationship" value="SFSHEADER"/>
+		</add>
+		<add container="HEADERDETAIL" control="tablebody">
+			<set property="id" value="1646100106946"/>
+		</add>
+		<add container="1646100106946" control="tablecol">
+			<set property="filterable" value="false"/>
+			<set property="id" value="1417333"/>
+			<set property="mxevent" value="toggledetailstate"/>
+			<set property="mxevent_desc" value="Show Detail"/>
+			<set property="sortable" value="false"/>
+			<set property="type" value="event"/>
+		</add>
+		<add container="1646100106946" control="tablecol">
+			<set property="dataattribute" value="RECORDTYPE"/>
+			<set property="id" value="1646100287189"/>
+		</add>
+		<add container="1646100106946" control="tablecol">
+			<set property="dataattribute" value="status"/>
+			<set property="id" value="1646100289611"/>
+		</add>
+		<add container="1646100106946" control="tablecol">
+			<set property="dataattribute" value="sfsdetail.classificationid"/>
+			<set property="id" value="1646100292371"/>
+		</add>
+		<add container="1646100106946" control="tablecol">
+			<set property="dataattribute" value="vendorid"/>
+			<set property="id" value="1646100294989"/>
+		</add>
+		<add container="1646100106946" control="tablecol">
+			<set property="dataattribute" value="enterby"/>
+			<set property="id" value="1646100296958"/>
+		</add>
+		<add container="1646100106946" control="tablecol">
+			<set property="dataattribute" value="sfsid"/>
+			<set property="id" value="1646100298950"/>
+		</add>
+		<add container="1646100106946" control="tablecol">
+			<set property="dataattribute" value="sfswonum"/>
+			<set property="id" value="1646100301569"/>
+		</add>
+		<add container="HEADERDETAIL" control="tabledetails">
+			<set property="id" value="16461001069463"/>
+		</add>
+		<add container="16461001069463" control="section">
+			<set property="id" value="1635988310869"/>
+		</add>
+		<add container="1635988310869" control="sectionrow">
+			<set property="id" value="1646101046502"/>
+		</add>
+		<add container="1646101046502" control="sectioncol">
+			<set property="id" value="111"/>
+		</add>
+		<add container="111" control="section">
+			<set property="border" value="false"/>
+			<set property="height" value="220"/>
+			<set property="id" value="1636059837223"/>
+			<set property="label" value="Header"/>
+		</add>
+		<add container="1636059837223" control="textbox">
+			<set property="dataattribute" value="recordtype"/>
+			<set property="id" value="112e"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="1636059837223" control="textbox">
+			<set property="dataattribute" value="status"/>
+			<set property="id" value="123"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="1636059837223" control="textbox">
+			<set property="dataattribute" value="enterby"/>
+			<set property="id" value="124"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="1636059837223" control="textbox">
+			<set property="dataattribute" value="reportedby"/>
+			<set property="id" value="126"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="1636059837223" control="textbox">
+			<set property="dataattribute" value="vendorid"/>
+			<set property="id" value="1287"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="1646101046502" control="sectioncol">
+			<set property="id" value="1646101049408"/>
+		</add>
+		<add container="1646101049408" control="section">
+			<set property="border" value="false"/>
+			<set property="height" value="220"/>
+			<set property="id" value="112"/>
+			<set property="label" value="References"/>
+		</add>
+		<add container="112" control="textbox">
+			<set property="dataattribute" value="sfsid"/>
+			<set property="id" value="1646100741303"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="112" control="textbox">
+			<set property="dataattribute" value="SFSWONuM"/>
+			<set property="id" value="1646100740709"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="112" control="textbox">
+			<set property="dataattribute" value="refwo"/>
+			<set property="id" value="1sss63598w8168619"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="label" value="ref WO"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="112" control="textbox">
+			<set property="dataattribute" value="refSFSID"/>
+			<set property="id" value="1646100739990"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="112" control="textbox">
+			<set property="dataattribute" value="refsfswonum"/>
+			<set property="id" value="1sss635988e168619"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="1646101046502" control="sectioncol">
+			<set property="id" value="16461010465022"/>
+		</add>
+		<add container="16461010465022" control="section">
+			<set property="border" value="false"/>
+			<set property="datasrc" value="1637712264614"/>
+			<set property="height" value="220"/>
+			<set property="id" value="1635988080232"/>
+			<set property="label" value="Comments"/>
+		</add>
+		<add container="1635988080232" control="multilinetextbox">
+			<set property="dataattribute" value="USERCOMMENT"/>
+			<set property="id" value="1635988168619"/>
+			<set property="rows" value="4"/>
+		</add>
+		<add container="1635988080232" control="multilinetextbox">
+			<set property="dataattribute" value="SYSCOMMENT"/>
+			<set property="id" value="1635988171171"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="rows" value="4"/>
+		</add>
+		<add container="1635988310869" control="sectionrow">
+			<set property="id" value="1646100943286"/>
+		</add>
+		<add container="1646100943286" control="sectioncol">
+			<set property="id" value="1646100949334"/>
+		</add>
+		<add container="1646100949334" control="section">
+			<set property="height" value="228"/>
+			<set property="id" value="sfs19"/>
+			<set property="label" value="Work Order"/>
+		</add>
+		<add container="sfs19" control="textbox">
+			<set property="dataattribute" value="SFSDetail.ClassificationId"/>
+			<set property="id" value="sfs14"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="sfs19" control="textbox">
+			<set property="dataattribute" value="SFSDetail.ValidationClass"/>
+			<set property="id" value="sfs15"/>
+			<set property="inputmode" value="readonly"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="sfs19" control="textbox">
+			<set property="dataattribute" value="SFSDetail.WOPriority"/>
+			<set property="id" value="sfs1b"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="sfs19" control="textbox">
+			<set property="dataattribute" value="SFSDETAIL.ESTDUR"/>
+			<set property="id" value="sfs18"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="sfs19" control="textbox">
+			<set property="dataattribute" value="SFSDetail.Location"/>
+			<set property="id" value="sfs13"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="sfs19" control="textbox">
+			<set property="dataattribute" value="SFSDETAIL.ASSETmeter"/>
+			<set property="id" value="sfs12"/>
+			<set property="label" value="Asset Meter"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="sfs19" control="textbox">
+			<set property="dataattribute" value="SFSDETAIL.PROJECTID"/>
+			<set property="id" value="sfs16"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="sfs19" control="textbox">
+			<set property="dataattribute" value="SFSDetail.TaskId"/>
+			<set property="id" value="sfs17"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="1646100943286" control="sectioncol">
+			<set property="id" value="1646100947693"/>
+		</add>
+		<add container="1646100947693" control="section">
+			<set property="height" value="228"/>
+			<set property="id" value="sfs30"/>
+			<set property="label" value="Location and Meter"/>
+		</add>
+		<add container="sfs30" control="textbox">
+			<set property="dataattribute" value="SFSDetail.NewMeter"/>
+			<set property="id" value="sfs334"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="sfs30" control="textbox">
+			<set property="dataattribute" value="SFSDetail.Storeroom"/>
+			<set property="id" value="sfs33"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="sfs30" control="blankline">
+			<set property="id" value="1646100863623"/>
+		</add>
+		<add container="sfs30" control="blankline">
+			<set property="id" value="1646100866467"/>
+		</add>
+		<add container="sfs30" control="textbox">
+			<set property="dataattribute" value="SFSDetail.ActualMeter"/>
+			<set property="id" value="sfs335"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="sfs30" control="textbox">
+			<set property="dataattribute" value="SFSDetail.NewLocation"/>
+			<set property="id" value="sfs32"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="sfs30" control="multilinetextbox">
+			<set property="dataattribute" value="SFSDetail.NewAddress"/>
+			<set property="id" value="sfs31a"/>
+			<set property="rows" value="2"/>
+		</add>
+		<add container="1646100943286" control="sectioncol">
+			<set property="id" value="16461009432862"/>
+		</add>
+		<add container="16461009432862" control="section">
+			<set property="height" value="228"/>
+			<set property="id" value="sfs22"/>
+			<set property="label" value="Dates"/>
+		</add>
+		<add container="sfs22" control="textbox">
+			<set property="dataattribute" value="SFSDetail.TargStartDate"/>
+			<set property="id" value="sfs23"/>
+			<set property="lookup" value="DATETIME"/>
+		</add>
+		<add container="sfs22" control="textbox">
+			<set property="dataattribute" value="SFSDetail.TargCompDate"/>
+			<set property="id" value="sfs24"/>
+			<set property="lookup" value="DATETIME"/>
+		</add>
+		<add container="sfs22" control="textbox">
+			<set property="dataattribute" value="SFSDetail.ActStartDate"/>
+			<set property="id" value="sfs25"/>
+			<set property="lookup" value="DATETIME"/>
+		</add>
+		<add container="sfs22" control="textbox">
+			<set property="dataattribute" value="SFSDetail.ActFinishDate"/>
+			<set property="id" value="sfs26"/>
+			<set property="lookup" value="DATETIME"/>
+		</add>
+		<add container="sfs22" control="textbox">
+			<set property="dataattribute" value="SFSDetail.MAdeSafeDate"/>
+			<set property="id" value="sfs27"/>
+			<set property="lookup" value="DATETIME"/>
+		</add>
+		<add container="sfs22" control="textbox">
+			<set property="dataattribute" value="SFSDetail.FNLConstraintDate"/>
+			<set property="id" value="1646100799166"/>
+			<set property="lookup" value="DATETIME"/>
+		</add>
+		<add container="sfs22" control="textbox">
+			<set property="dataattribute" value="SFSDETAIL.sfscreateddate"/>
+			<set property="id" value="sfs28"/>
+			<set property="lookup" value="DATETIME"/>
+		</add>
+		<add container="sfs" control="tabgroup">
+			<set property="id" value="subSFS"/>
+		</add>
+		<add container="subSFS" control="tab">
+			<set property="id" value="1635988224331"/>
+			<set property="label" value="Specification"/>
+		</add>
+		<add container="1635988224331" control="section">
+			<set property="id" value="1635988343021"/>
+		</add>
+		<add container="1635988343021" control="table">
+			<set property="id" value="1635988383868"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="label" value="Specification"/>
+			<set property="parentdatasrc" value="HEADERDETAIL"/>
+			<set property="relationship" value="SFSSPEC"/>
+		</add>
+		<add container="1635988383868" control="tablebody">
+			<set property="id" value="16359883838682"/>
+		</add>
+		<add container="16359883838682" control="tablecol">
+			<set property="dataattribute" value="attributename"/>
+			<set property="id" value="1635988387493"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="label" value="Attribute"/>
+		</add>
+		<add container="16359883838682" control="tablecol">
+			<set property="dataattribute" value="attributevalue"/>
+			<set property="id" value="1635988386039"/>
+		</add>
+		<add container="subSFS" control="tab">
+			<set property="id" value="1635988228793"/>
+			<set property="label" value="Labors"/>
+		</add>
+		<add container="1635988228793" control="section">
+			<set property="id" value="1635988350271"/>
+		</add>
+		<add container="1635988350271" control="table">
+			<set property="id" value="1635988359762"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="label" value="Labors"/>
+			<set property="parentdatasrc" value="HEADERDETAIL"/>
+			<set property="relationship" value="SFSLABOR"/>
+		</add>
+		<add container="1635988359762" control="tablebody">
+			<set property="id" value="16359883597622"/>
+		</add>
+		<add container="16359883597622" control="tablecol">
+			<set property="dataattribute" value="Type"/>
+			<set property="id" value="sfs40"/>
+		</add>
+		<add container="16359883597622" control="tablecol">
+			<set property="dataattribute" value="PremiumPayCode"/>
+			<set property="id" value="sfs44"/>
+		</add>
+		<add container="16359883597622" control="tablecol">
+			<set property="dataattribute" value="LaborCode"/>
+			<set property="id" value="sfs41"/>
+		</add>
+		<add container="16359883597622" control="tablecol">
+			<set property="dataattribute" value="StartDate"/>
+			<set property="id" value="sfs42"/>
+			<set property="lookup" value="datetime"/>
+		</add>
+		<add container="16359883597622" control="tablecol">
+			<set property="dataattribute" value="Hours"/>
+			<set property="id" value="sfs43"/>
+		</add>
+		<add container="subSFS" control="tab">
+			<set property="id" value="1635988226502"/>
+			<set property="label" value="Service Items"/>
+		</add>
+		<add container="1635988226502" control="section">
+			<set property="id" value="1635988347613"/>
+		</add>
+		<add container="1635988347613" control="table">
+			<set property="id" value="1635988375411"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="label" value="Service Items"/>
+			<set property="parentdatasrc" value="HEADERDETAIL"/>
+			<set property="relationship" value="SFSSI"/>
+		</add>
+		<add container="1635988375411" control="tablebody">
+			<set property="id" value="16359883754112"/>
+		</add>
+		<add container="16359883754112" control="tablecol">
+			<set property="dataattribute" value="ContractNum"/>
+			<set property="id" value="sfs36"/>
+		</add>
+		<add container="16359883754112" control="tablecol">
+			<set property="dataattribute" value="ItemNum"/>
+			<set property="id" value="sfs37"/>
+		</add>
+		<add container="16359883754112" control="tablecol">
+			<set property="dataattribute" value="Description"/>
+			<set property="id" value="sfs38"/>
+		</add>
+		<add container="16359883754112" control="tablecol">
+			<set property="dataattribute" value="Quantity"/>
+			<set property="id" value="sfs39"/>
+		</add>
+		<add container="sfs" control="datasrc">
+			<set property="id" value="1637712264614"/>
+			<set property="parentdatasrc" value="MAINRECORD"/>
+			<set property="relationship" value="SFSHEADER"/>
+		</add>
+		<modify control="wo_priority">
+			<set property="lookup" value="VALUELISTNUMSORT"/>
+		</modify>
+		<add container="apa_sias_links_001" control="hyperlink">
+			<set property="align" value="right"/>
+			<set property="id" value="apa_sias_links_001_sa_002"/>
+			<set property="label" value="View Spatial GIS Map"/>
+			<set property="mxevent" value="APA_SIAS_VIEW_STREET_SA"/>
+			<set property="sigoption" value="APA_SIAS_VIEW_STREET_SA"/>
+		</add>
+		<add before="apa_sias_links_001_vic_002" container="apa_sias_links_001" control="hyperlink">
+			<set property="align" value="right"/>
+			<set property="id" value="apa_sias_links_001_sa_001"/>
+			<set property="label" value="View Spatial GIS Map"/>
+			<set property="mxevent" value="APA_SIAS_VIEW_MIRN_SA"/>
+			<set property="sigoption" value="APA_SIAS_VIEW_MIRN_SA"/>
+		</add>
+		<add container="apa_sias_links_002" control="hyperlink">
+			<set property="align" value="right"/>
+			<set property="id" value="apa_sias_links_002_sa_001"/>
+			<set property="label" value="GIS Create Service Launch"/>
+			<set property="mxevent" value="APA_SIAS_CREATE_VIC"/>
+			<set property="sigoption" value="APA_SIAS_CREATE_VIC"/>
+		</add>
+		<add before="apa_sias_links_002_sa_001" container="apa_sias_links_002" control="hyperlink">
+			<set property="align" value="right"/>
+			<set property="id" value="apa_sias_links_002_vic_001"/>
+			<set property="label" value="GIS Create Service Launch"/>
+			<set property="mxevent" value="APA_SIAS_CREATE_SA"/>
+			<set property="sigoption" value="APA_SIAS_CREATE_SA"/>
+		</add>
+	</app>
+</updatescript>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updatescript version="6.0.0">
+	<app apptype="webclient" id="sfs">
+		<add before="163R48" container="1635ff80232" control="textbox">
+			<set property="dataattribute" value="EnterBY"/>
+			<set property="id" value="1659918547549"/>
+			<set property="inputmode" value="READONLY"/>
+		</add>
+		<modify control="sfs13">
+			<set property="applink" value="plusgloc"/>
+			<set property="menutype" value="normal"/>
+		</modify>
+		<move before="sfs31a" child="163E8" container="sfs30"/>
+		<modify control="163E8">
+			<set property="dataattribute" value="SFSDETAIL.SFS_NEWLOCATION.SERVICEADDRESS.FORMATTEDADDRESS"/>
+			<set property="label" value="New Address"/>
+		</modify>
+		<add before="sfs32" container="sfs30" control="blankline">
+			<set property="id" value="1659918516958"/>
+		</add>
+		<move before="1659918516958" child="1646360556815" container="sfs30"/>
+		<modify control="sfs32">
+			<set property="applink" value="plusgloc"/>
+			<set property="menutype" value="NORMAL"/>
+		</modify>
+		<modify control="sfs31a">
+			<set property="label" value="Free Text Address"/>
+		</modify>
+		<remove container="results_showlist_tablebody" control="1658810364664"/>
+		<remove container="sfs303" control="sfs15"/>
+		<remove container="sfs30" control="1646360549871"/>
+	</app>
+</updatescript>

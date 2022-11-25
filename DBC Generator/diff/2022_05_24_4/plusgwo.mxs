@@ -1,0 +1,897 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updatescript version="7.1.0.0">
+	<app apptype="webclient" id="plusgwo">
+		<add before="plusgwpmatcert" container="plusgwo" control="dialog">
+			<set property="id" value="sfstrigger"/>
+			<set property="label" value="Manul Trigger of SFS integration"/>
+			<set property="savemode" value="ONLOADUNLOAD"/>
+		</add>
+		<add container="sfstrigger" control="section">
+			<set property="border" value="true"/>
+			<set property="datasrc" value="MAINRECORD"/>
+			<set property="id" value="trigger6"/>
+		</add>
+		<add container="trigger6" control="sectionrow">
+			<set property="id" value="trigger5"/>
+		</add>
+		<add container="trigger5" control="sectioncol">
+			<set property="id" value="trigger4"/>
+		</add>
+		<add container="trigger4" control="section">
+			<set property="id" value="trigger3"/>
+		</add>
+		<add container="trigger3" control="statictext">
+			<set property="align" value="left"/>
+			<set property="id" value="1636402872990"/>
+			<set property="label" value="&lt;B&gt;To trigger integration, set status to SFS.&lt;/B&gt;"/>
+		</add>
+		<add container="trigger3" control="blankline">
+			<set property="id" value="1636500411181"/>
+		</add>
+		<add container="trigger3" control="multiparttextbox">
+			<set property="dataattribute" value="WONUM"/>
+			<set property="descdataattribute" value="description"/>
+			<set property="descinputmode" value="readonly"/>
+			<set property="id" value="tRIGGER_22"/>
+			<set property="inputmode" value="readonly"/>
+		</add>
+		<add container="trigger3" control="textbox">
+			<set property="dataattribute" value="sfsINTSTATUS"/>
+			<set property="id" value="trigger2"/>
+			<set property="lookup" value="VALUELIST"/>
+		</add>
+		<add container="sfstrigger" control="buttongroup">
+			<set property="id" value="trigger7"/>
+		</add>
+		<add container="trigger7" control="pushbutton">
+			<set property="id" value="trigger8"/>
+			<set property="label" value="OK"/>
+			<set property="mxevent" value="dialogok"/>
+		</add>
+		<add container="trigger7" control="pushbutton">
+			<set property="id" value="trigger9"/>
+			<set property="label" value="Cancel"/>
+			<set property="mxevent" value="dialogcancel"/>
+		</add>
+		<add before="sfstrigger" container="plusgwo" control="dialog">
+			<set property="beanclass" value="psdi.webclient.system.beans.DataBean"/>
+			<set property="id" value="sfsnldate"/>
+			<set property="label" value="Mass update of NL Date"/>
+			<set property="mboname" value="SFSNLDATE"/>
+		</add>
+		<add container="sfsnldate" control="section">
+			<set property="id" value="nl1"/>
+		</add>
+		<add container="nl1" control="textbox">
+			<set property="dataattribute" value="nldate"/>
+			<set property="id" value="nl2"/>
+			<set property="lookup" value="valuelist"/>
+		</add>
+		<add container="sfsnldate" control="buttongroup">
+			<set property="id" value="nl3"/>
+		</add>
+		<add container="nl3" control="pushbutton">
+			<set property="default" value="true"/>
+			<set property="id" value="nl5"/>
+			<set property="label" value="OK"/>
+			<set property="mxevent" value="sfsyolo"/>
+		</add>
+		<add container="nl3" control="pushbutton">
+			<set property="id" value="nl4"/>
+			<set property="label" value="Cancel"/>
+			<set property="mxevent" value="dialogcancel"/>
+		</add>
+		<add before="PLUSGCRPTW" container="plusgwo" control="dialog">
+			<set property="beanclass" value="psdi.webclient.beans.workorder.WOChangeStatusBean"/>
+			<set property="id" value="SFSEXCREQ"/>
+			<set property="label" value="Exclusion Request"/>
+			<set property="relationship" value="SFSEXCREQ"/>
+			<set property="savemode" value="ONUNLOAD"/>
+		</add>
+		<add container="SFSEXCREQ" control="section">
+			<set property="border" value="true"/>
+			<set property="id" value="excreq22"/>
+		</add>
+		<add container="excreq22" control="section">
+			<set property="id" value="exc24"/>
+		</add>
+		<add container="exc24" control="statictext">
+			<set property="align" value="left"/>
+			<set property="id" value="excreq33"/>
+			<set property="label" value="&lt;B&gt;Change status to CANREQ will trigger integration.&lt;/B&gt;"/>
+		</add>
+		<add container="exc24" control="blankline">
+			<set property="id" value="exc181"/>
+		</add>
+		<add container="exc24" control="multiparttextbox">
+			<set property="dataattribute" value="WONUM"/>
+			<set property="datasrc" value="MAINRECORD"/>
+			<set property="descdataattribute" value="description"/>
+			<set property="descinputmode" value="readonly"/>
+			<set property="id" value="excRww"/>
+			<set property="inputmode" value="readonly"/>
+		</add>
+		<add container="exc24" control="textbox">
+			<set property="dataattribute" value="status"/>
+			<set property="id" value="excddddd"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="width" value="128"/>
+		</add>
+		<add container="exc24" control="textbox">
+			<set property="dataattribute" value="AsOfDate"/>
+			<set property="id" value="excreq8"/>
+			<set property="inputmode" value="READONLY"/>
+		</add>
+		<add container="exc24" control="textbox">
+			<set property="dataattribute" value="Memo"/>
+			<set property="id" value="excreq9"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="label" value="Reason"/>
+			<set property="width" value="407"/>
+		</add>
+		<add container="excreq22" control="sectionrow">
+			<set property="id" value="excreq23"/>
+		</add>
+		<add container="excreq23" control="sectioncol">
+			<set property="id" value="excreq23f"/>
+		</add>
+		<add container="SFSEXCREQ" control="buttongroup">
+			<set property="id" value="excreq11"/>
+		</add>
+		<add container="excreq11" control="pushbutton">
+			<set property="default" value="true"/>
+			<set property="id" value="excreq12"/>
+			<set property="label" value="OK"/>
+			<set property="mxevent" value="dialogok"/>
+		</add>
+		<add container="excreq11" control="pushbutton">
+			<set property="id" value="excreq13"/>
+			<set property="label" value="Cancel"/>
+			<set property="mxevent" value="dialogcancel"/>
+		</add>
+		<add before="SFSEXCREQ" container="plusgwo" control="dialog">
+			<set property="beanclass" value="psdi.webclient.beans.workorder.WOChangeStatusBean"/>
+			<set property="id" value="SFSCANREQ"/>
+			<set property="label" value="Cancelation Request"/>
+			<set property="relationship" value="SFSCANREQ"/>
+			<set property="savemode" value="ONUNLOAD"/>
+		</add>
+		<add container="SFSCANREQ" control="section">
+			<set property="border" value="true"/>
+			<set property="id" value="canreq22"/>
+		</add>
+		<add container="canreq22" control="section">
+			<set property="id" value="24"/>
+		</add>
+		<add container="24" control="statictext">
+			<set property="align" value="left"/>
+			<set property="id" value="1canreq33"/>
+			<set property="label" value="&lt;B&gt;Change status to CANREQ will trigger integration.&lt;/B&gt;"/>
+		</add>
+		<add container="24" control="blankline">
+			<set property="id" value="163eee181"/>
+		</add>
+		<add container="24" control="multiparttextbox">
+			<set property="dataattribute" value="WONUM"/>
+			<set property="datasrc" value="MAINRECORD"/>
+			<set property="descdataattribute" value="description"/>
+			<set property="descinputmode" value="readonly"/>
+			<set property="id" value="tRww"/>
+			<set property="inputmode" value="readonly"/>
+		</add>
+		<add container="24" control="textbox">
+			<set property="dataattribute" value="status"/>
+			<set property="id" value="ddddddd"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="width" value="128"/>
+		</add>
+		<add container="24" control="textbox">
+			<set property="dataattribute" value="AsOfDate"/>
+			<set property="id" value="canreq8"/>
+			<set property="inputmode" value="READONLY"/>
+		</add>
+		<add container="24" control="textbox">
+			<set property="dataattribute" value="Memo"/>
+			<set property="id" value="canreq9"/>
+			<set property="inputmode" value="REQUIRED"/>
+			<set property="label" value="Reason"/>
+			<set property="width" value="407"/>
+		</add>
+		<add container="canreq22" control="sectionrow">
+			<set property="id" value="canreq23"/>
+		</add>
+		<add container="canreq23" control="sectioncol">
+			<set property="id" value="canreq23f"/>
+		</add>
+		<add container="SFSCANREQ" control="buttongroup">
+			<set property="id" value="canreq11"/>
+		</add>
+		<add container="canreq11" control="pushbutton">
+			<set property="default" value="true"/>
+			<set property="id" value="canreq12"/>
+			<set property="label" value="OK"/>
+			<set property="mxevent" value="dialogok"/>
+		</add>
+		<add container="canreq11" control="pushbutton">
+			<set property="id" value="canreq13"/>
+			<set property="label" value="Cancel"/>
+			<set property="mxevent" value="dialogcancel"/>
+		</add>
+		<add before="PLUSGCRINV" container="plusgwo" control="dialog">
+			<set property="beanclass" value="psdi.webclient.beans.workorder.WOChangeStatusBean"/>
+			<set property="id" value="SFSAPPR"/>
+			<set property="label" value="SFS Approval"/>
+			<set property="relationship" value="SFSAPPR"/>
+			<set property="savemode" value="ONUNLOAD"/>
+		</add>
+		<add container="SFSAPPR" control="section">
+			<set property="border" value="true"/>
+			<set property="id" value="sfappr22"/>
+		</add>
+		<add container="sfappr22" control="section">
+			<set property="id" value="2fff4"/>
+		</add>
+		<add container="2fff4" control="statictext">
+			<set property="align" value="left"/>
+			<set property="id" value="1sfappr33"/>
+			<set property="label" value="&lt;B&gt;Change status to SFSAPPR will trigger integration.&lt;/B&gt;"/>
+		</add>
+		<add container="2fff4" control="blankline">
+			<set property="id" value="163ddd181"/>
+		</add>
+		<add container="2fff4" control="multiparttextbox">
+			<set property="dataattribute" value="WONUM"/>
+			<set property="datasrc" value="MAINRECORD"/>
+			<set property="descdataattribute" value="description"/>
+			<set property="descinputmode" value="readonly"/>
+			<set property="id" value="tRxww"/>
+			<set property="inputmode" value="readonly"/>
+		</add>
+		<add container="2fff4" control="textbox">
+			<set property="dataattribute" value="status"/>
+			<set property="id" value="dddccdd"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="width" value="128"/>
+		</add>
+		<add container="2fff4" control="textbox">
+			<set property="dataattribute" value="AsOfDate"/>
+			<set property="id" value="sfappr8"/>
+			<set property="inputmode" value="READONLY"/>
+		</add>
+		<add container="2fff4" control="textbox">
+			<set property="dataattribute" value="Memo"/>
+			<set property="id" value="sfappr9"/>
+			<set property="inputmode" value="REQUIRED"/>
+			<set property="label" value="Reason"/>
+			<set property="width" value="407"/>
+		</add>
+		<add container="sfappr22" control="sectionrow">
+			<set property="id" value="sfappr23"/>
+		</add>
+		<add container="sfappr23" control="sectioncol">
+			<set property="id" value="sfappr23f"/>
+		</add>
+		<add container="SFSAPPR" control="buttongroup">
+			<set property="id" value="sfappr11"/>
+		</add>
+		<add container="sfappr11" control="pushbutton">
+			<set property="default" value="true"/>
+			<set property="id" value="sfappr12"/>
+			<set property="label" value="OK"/>
+			<set property="mxevent" value="dialogok"/>
+		</add>
+		<add container="sfappr11" control="pushbutton">
+			<set property="id" value="sfappr13"/>
+			<set property="label" value="Cancel"/>
+			<set property="mxevent" value="dialogcancel"/>
+		</add>
+		<add before="CREATEPROB" container="plusgwo" control="dialog">
+			<set property="beanclass" value="psdi.webclient.beans.workorder.WOChangeStatusBean"/>
+			<set property="id" value="LIST_SFSCANREQ"/>
+			<set property="label" value="Cancelation Request List"/>
+			<set property="relationship" value="SFSCANREQ"/>
+			<set property="savemode" value="ONUNLOAD"/>
+		</add>
+		<add container="LIST_SFSCANREQ" control="section">
+			<set property="border" value="true"/>
+			<set property="id" value="list_canreq22"/>
+		</add>
+		<add container="list_canreq22" control="section">
+			<set property="id" value="list_24"/>
+		</add>
+		<add container="list_24" control="statictext">
+			<set property="align" value="left"/>
+			<set property="id" value="list_1canreq33"/>
+			<set property="label" value="&lt;B&gt;Change status to CANREQ will trigger integration.&lt;/B&gt;"/>
+		</add>
+		<add container="list_24" control="blankline">
+			<set property="id" value="list_163eee181"/>
+		</add>
+		<add container="list_24" control="textbox">
+			<set property="dataattribute" value="status"/>
+			<set property="id" value="list_ddddddd"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="width" value="128"/>
+		</add>
+		<add container="list_24" control="textbox">
+			<set property="dataattribute" value="AsOfDate"/>
+			<set property="id" value="list_canreq8"/>
+			<set property="inputmode" value="READONLY"/>
+		</add>
+		<add container="list_24" control="textbox">
+			<set property="dataattribute" value="Memo"/>
+			<set property="id" value="list_canreq9"/>
+			<set property="inputmode" value="REQUIRED"/>
+			<set property="label" value="Reason"/>
+			<set property="width" value="407"/>
+		</add>
+		<add container="list_canreq22" control="sectionrow">
+			<set property="id" value="list_canreq23"/>
+		</add>
+		<add container="list_canreq23" control="sectioncol">
+			<set property="id" value="list_canreq23f"/>
+		</add>
+		<add container="LIST_SFSCANREQ" control="buttongroup">
+			<set property="id" value="list_canreq11"/>
+		</add>
+		<add container="list_canreq11" control="pushbutton">
+			<set property="default" value="true"/>
+			<set property="id" value="list_canreq12"/>
+			<set property="label" value="OK"/>
+			<set property="mxevent" value="dialogok"/>
+		</add>
+		<add container="list_canreq11" control="pushbutton">
+			<set property="id" value="list_canreq13"/>
+			<set property="label" value="Cancel"/>
+			<set property="mxevent" value="dialogcancel"/>
+		</add>
+		<add before="apaptwtab" container="maintabs" control="tab">
+			<set property="id" value="sfs"/>
+			<set property="label" value="SFS"/>
+		</add>
+		<add container="sfs" control="table">
+			<set property="id" value="HEADERDETAIL"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="parentdatasrc" value="MAINRECORD"/>
+			<set property="relationship" value="SFSHEADER"/>
+		</add>
+		<add container="HEADERDETAIL" control="tablebody">
+			<set property="id" value="1646100106946"/>
+		</add>
+		<add container="1646100106946" control="tablecol">
+			<set property="filterable" value="false"/>
+			<set property="id" value="1417333"/>
+			<set property="mxevent" value="toggledetailstate"/>
+			<set property="mxevent_desc" value="Show Detail"/>
+			<set property="sortable" value="false"/>
+			<set property="type" value="event"/>
+		</add>
+		<add container="1646100106946" control="tablecol">
+			<set property="dataattribute" value="RECORDTYPE"/>
+			<set property="id" value="1646100287189"/>
+		</add>
+		<add container="1646100106946" control="tablecol">
+			<set property="dataattribute" value="status"/>
+			<set property="id" value="1646100289611"/>
+		</add>
+		<add container="1646100106946" control="tablecol">
+			<set property="dataattribute" value="sfsdetail.classificationid"/>
+			<set property="id" value="1646100292371"/>
+		</add>
+		<add container="1646100106946" control="tablecol">
+			<set property="dataattribute" value="vendorid"/>
+			<set property="id" value="1646100294989"/>
+		</add>
+		<add container="1646100106946" control="tablecol">
+			<set property="dataattribute" value="enterby"/>
+			<set property="id" value="1646100296958"/>
+		</add>
+		<add container="1646100106946" control="tablecol">
+			<set property="dataattribute" value="sfsid"/>
+			<set property="id" value="1646100298950"/>
+		</add>
+		<add container="1646100106946" control="tablecol">
+			<set property="dataattribute" value="sfswonum"/>
+			<set property="id" value="1646100301569"/>
+		</add>
+		<add container="HEADERDETAIL" control="tabledetails">
+			<set property="id" value="16461001069463"/>
+		</add>
+		<add container="16461001069463" control="section">
+			<set property="id" value="1635988310869"/>
+		</add>
+		<add container="1635988310869" control="sectionrow">
+			<set property="id" value="1646101046502"/>
+		</add>
+		<add container="1646101046502" control="sectioncol">
+			<set property="id" value="111"/>
+		</add>
+		<add container="111" control="section">
+			<set property="border" value="false"/>
+			<set property="height" value="220"/>
+			<set property="id" value="1636059837223"/>
+			<set property="label" value="Header"/>
+		</add>
+		<add container="1636059837223" control="textbox">
+			<set property="dataattribute" value="recordtype"/>
+			<set property="id" value="112e"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="1636059837223" control="textbox">
+			<set property="dataattribute" value="status"/>
+			<set property="id" value="123"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="1636059837223" control="textbox">
+			<set property="dataattribute" value="enterby"/>
+			<set property="id" value="124"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="1636059837223" control="textbox">
+			<set property="dataattribute" value="reportedby"/>
+			<set property="id" value="126"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="1636059837223" control="textbox">
+			<set property="dataattribute" value="vendorid"/>
+			<set property="id" value="1287"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="1646101046502" control="sectioncol">
+			<set property="id" value="1646101049408"/>
+		</add>
+		<add container="1646101049408" control="section">
+			<set property="border" value="false"/>
+			<set property="height" value="220"/>
+			<set property="id" value="112"/>
+			<set property="label" value="References"/>
+		</add>
+		<add container="112" control="textbox">
+			<set property="dataattribute" value="sfsid"/>
+			<set property="id" value="1646100741303"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="112" control="textbox">
+			<set property="dataattribute" value="SFSWONuM"/>
+			<set property="id" value="1646100740709"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="112" control="textbox">
+			<set property="dataattribute" value="refwo"/>
+			<set property="id" value="1sss63598w8168619"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="label" value="ref WO"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="112" control="textbox">
+			<set property="dataattribute" value="refSFSID"/>
+			<set property="id" value="1646100739990"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="112" control="textbox">
+			<set property="dataattribute" value="refsfswonum"/>
+			<set property="id" value="1sss635988e168619"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="1646101046502" control="sectioncol">
+			<set property="id" value="16461010465022"/>
+		</add>
+		<add container="16461010465022" control="section">
+			<set property="border" value="false"/>
+			<set property="datasrc" value="1637712264614"/>
+			<set property="height" value="220"/>
+			<set property="id" value="1635988080232"/>
+			<set property="label" value="Comments"/>
+		</add>
+		<add container="1635988080232" control="multilinetextbox">
+			<set property="dataattribute" value="USERCOMMENT"/>
+			<set property="id" value="1635988168619"/>
+			<set property="rows" value="4"/>
+		</add>
+		<add container="1635988080232" control="multilinetextbox">
+			<set property="dataattribute" value="SYSCOMMENT"/>
+			<set property="id" value="1635988171171"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="rows" value="4"/>
+		</add>
+		<add container="1635988310869" control="sectionrow">
+			<set property="id" value="1646100943286"/>
+		</add>
+		<add container="1646100943286" control="sectioncol">
+			<set property="id" value="1646100949334"/>
+		</add>
+		<add container="1646100949334" control="section">
+			<set property="height" value="228"/>
+			<set property="id" value="sfs19"/>
+			<set property="label" value="Work Order"/>
+		</add>
+		<add container="sfs19" control="textbox">
+			<set property="dataattribute" value="SFSDetail.ClassificationId"/>
+			<set property="id" value="sfs14"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="sfs19" control="textbox">
+			<set property="dataattribute" value="SFSDetail.ValidationClass"/>
+			<set property="id" value="sfs15"/>
+			<set property="inputmode" value="readonly"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="sfs19" control="textbox">
+			<set property="dataattribute" value="SFSDetail.WOPriority"/>
+			<set property="id" value="sfs1b"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="sfs19" control="textbox">
+			<set property="dataattribute" value="SFSDETAIL.ESTDUR"/>
+			<set property="id" value="sfs18"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="sfs19" control="textbox">
+			<set property="dataattribute" value="SFSDetail.Location"/>
+			<set property="id" value="sfs13"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="sfs19" control="textbox">
+			<set property="dataattribute" value="SFSDETAIL.ASSETmeter"/>
+			<set property="id" value="sfs12"/>
+			<set property="label" value="Asset Meter"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="sfs19" control="textbox">
+			<set property="dataattribute" value="SFSDETAIL.PROJECTID"/>
+			<set property="id" value="sfs16"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="sfs19" control="textbox">
+			<set property="dataattribute" value="SFSDetail.TaskId"/>
+			<set property="id" value="sfs17"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="1646100943286" control="sectioncol">
+			<set property="id" value="1646100947693"/>
+		</add>
+		<add container="1646100947693" control="section">
+			<set property="height" value="228"/>
+			<set property="id" value="sfs30"/>
+			<set property="label" value="Location and Meter"/>
+		</add>
+		<add container="sfs30" control="textbox">
+			<set property="dataattribute" value="SFSDetail.NewMeter"/>
+			<set property="id" value="sfs334"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="sfs30" control="textbox">
+			<set property="dataattribute" value="SFSDetail.Storeroom"/>
+			<set property="id" value="sfs33"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="sfs30" control="blankline">
+			<set property="id" value="1646100863623"/>
+		</add>
+		<add container="sfs30" control="blankline">
+			<set property="id" value="1646100866467"/>
+		</add>
+		<add container="sfs30" control="textbox">
+			<set property="dataattribute" value="SFSDetail.ActualMeter"/>
+			<set property="id" value="sfs335"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="sfs30" control="textbox">
+			<set property="dataattribute" value="SFSDetail.NewLocation"/>
+			<set property="id" value="sfs32"/>
+			<set property="width" value="127"/>
+		</add>
+		<add container="sfs30" control="multilinetextbox">
+			<set property="dataattribute" value="SFSDetail.NewAddress"/>
+			<set property="id" value="sfs31a"/>
+			<set property="rows" value="2"/>
+		</add>
+		<add container="1646100943286" control="sectioncol">
+			<set property="id" value="16461009432862"/>
+		</add>
+		<add container="16461009432862" control="section">
+			<set property="height" value="228"/>
+			<set property="id" value="sfs22"/>
+			<set property="label" value="Dates"/>
+		</add>
+		<add container="sfs22" control="textbox">
+			<set property="dataattribute" value="SFSDetail.TargStartDate"/>
+			<set property="id" value="sfs23"/>
+			<set property="lookup" value="DATETIME"/>
+		</add>
+		<add container="sfs22" control="textbox">
+			<set property="dataattribute" value="SFSDetail.TargCompDate"/>
+			<set property="id" value="sfs24"/>
+			<set property="lookup" value="DATETIME"/>
+		</add>
+		<add container="sfs22" control="textbox">
+			<set property="dataattribute" value="SFSDetail.ActStartDate"/>
+			<set property="id" value="sfs25"/>
+			<set property="lookup" value="DATETIME"/>
+		</add>
+		<add container="sfs22" control="textbox">
+			<set property="dataattribute" value="SFSDetail.ActFinishDate"/>
+			<set property="id" value="sfs26"/>
+			<set property="lookup" value="DATETIME"/>
+		</add>
+		<add container="sfs22" control="textbox">
+			<set property="dataattribute" value="SFSDetail.MAdeSafeDate"/>
+			<set property="id" value="sfs27"/>
+			<set property="lookup" value="DATETIME"/>
+		</add>
+		<add container="sfs22" control="textbox">
+			<set property="dataattribute" value="SFSDetail.FNLConstraintDate"/>
+			<set property="id" value="1646100799166"/>
+			<set property="lookup" value="DATETIME"/>
+		</add>
+		<add container="sfs22" control="textbox">
+			<set property="dataattribute" value="SFSDETAIL.sfscreateddate"/>
+			<set property="id" value="sfs28"/>
+			<set property="lookup" value="DATETIME"/>
+		</add>
+		<add container="sfs" control="tabgroup">
+			<set property="id" value="subSFS"/>
+		</add>
+		<add container="subSFS" control="tab">
+			<set property="id" value="1635988224331"/>
+			<set property="label" value="Specification"/>
+		</add>
+		<add container="1635988224331" control="section">
+			<set property="id" value="1635988343021"/>
+		</add>
+		<add container="1635988343021" control="table">
+			<set property="id" value="1635988383868"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="label" value="Specification"/>
+			<set property="parentdatasrc" value="HEADERDETAIL"/>
+			<set property="relationship" value="SFSSPEC"/>
+		</add>
+		<add container="1635988383868" control="tablebody">
+			<set property="id" value="16359883838682"/>
+		</add>
+		<add container="16359883838682" control="tablecol">
+			<set property="dataattribute" value="attributename"/>
+			<set property="id" value="1635988387493"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="label" value="Attribute"/>
+		</add>
+		<add container="16359883838682" control="tablecol">
+			<set property="dataattribute" value="attributevalue"/>
+			<set property="id" value="1635988386039"/>
+		</add>
+		<add container="subSFS" control="tab">
+			<set property="id" value="1635988228793"/>
+			<set property="label" value="Labors"/>
+		</add>
+		<add container="1635988228793" control="section">
+			<set property="id" value="1635988350271"/>
+		</add>
+		<add container="1635988350271" control="table">
+			<set property="id" value="1635988359762"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="label" value="Labors"/>
+			<set property="parentdatasrc" value="HEADERDETAIL"/>
+			<set property="relationship" value="SFSLABOR"/>
+		</add>
+		<add container="1635988359762" control="tablebody">
+			<set property="id" value="16359883597622"/>
+		</add>
+		<add container="16359883597622" control="tablecol">
+			<set property="dataattribute" value="Type"/>
+			<set property="id" value="sfs40"/>
+		</add>
+		<add container="16359883597622" control="tablecol">
+			<set property="dataattribute" value="PremiumPayCode"/>
+			<set property="id" value="sfs44"/>
+		</add>
+		<add container="16359883597622" control="tablecol">
+			<set property="dataattribute" value="LaborCode"/>
+			<set property="id" value="sfs41"/>
+		</add>
+		<add container="16359883597622" control="tablecol">
+			<set property="dataattribute" value="StartDate"/>
+			<set property="id" value="sfs42"/>
+			<set property="lookup" value="datetime"/>
+		</add>
+		<add container="16359883597622" control="tablecol">
+			<set property="dataattribute" value="Hours"/>
+			<set property="id" value="sfs43"/>
+		</add>
+		<add container="subSFS" control="tab">
+			<set property="id" value="1635988226502"/>
+			<set property="label" value="Service Items"/>
+		</add>
+		<add container="1635988226502" control="section">
+			<set property="id" value="1635988347613"/>
+		</add>
+		<add container="1635988347613" control="table">
+			<set property="id" value="1635988375411"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="label" value="Service Items"/>
+			<set property="parentdatasrc" value="HEADERDETAIL"/>
+			<set property="relationship" value="SFSSI"/>
+		</add>
+		<add container="1635988375411" control="tablebody">
+			<set property="id" value="16359883754112"/>
+		</add>
+		<add container="16359883754112" control="tablecol">
+			<set property="dataattribute" value="ContractNum"/>
+			<set property="id" value="sfs36"/>
+		</add>
+		<add container="16359883754112" control="tablecol">
+			<set property="dataattribute" value="ItemNum"/>
+			<set property="id" value="sfs37"/>
+		</add>
+		<add container="16359883754112" control="tablecol">
+			<set property="dataattribute" value="Description"/>
+			<set property="id" value="sfs38"/>
+		</add>
+		<add container="16359883754112" control="tablecol">
+			<set property="dataattribute" value="Quantity"/>
+			<set property="id" value="sfs39"/>
+		</add>
+		<add container="sfs" control="datasrc">
+			<set property="id" value="1637712264614"/>
+			<set property="parentdatasrc" value="MAINRECORD"/>
+			<set property="relationship" value="SFSHEADER"/>
+		</add>
+		<add before="1480377925481" container="headera_10" control="checkbox">
+			<set property="dataattribute" value="SFSHARDPUSH"/>
+			<set property="id" value="1645060949892"/>
+			<set property="label" value="Integration Hard Push"/>
+		</add>
+		<add before="1645060949892" container="headera_10" control="checkbox">
+			<set property="dataattribute" value="sfshardstop"/>
+			<set property="id" value="1652053763458"/>
+			<set property="label" value="Integration Hard Stop"/>
+		</add>
+		<add before="1652053763458" container="headera_10" control="textbox">
+			<set property="dataattribute" value="sfsintdate"/>
+			<set property="id" value="1636401996095"/>
+			<set property="inputmode" value="readonly"/>
+		</add>
+		<add before="1636401996095" container="headera_10" control="textbox">
+			<set property="dataattribute" value="sfsintstatus"/>
+			<set property="id" value="1636401998751"/>
+			<set property="inputmode" value="readonly"/>
+		</add>
+		<add before="1636401998751" container="headera_10" control="textbox">
+			<set property="dataattribute" value="statusdate"/>
+			<set property="id" value="1636325282798"/>
+		</add>
+		<add before="1636325282798" container="headera_10" control="textbox">
+			<set property="dataattribute" value="status"/>
+			<set property="id" value="1636943797434"/>
+			<set property="moreinformation" value="com.ibm.mbs.doc,mbs_common/c_wo_status.html"/>
+		</add>
+		<add before="1636943797434" container="headera_10" control="textbox">
+			<set property="dataattribute" value="SFSSPFOLDERPATH"/>
+			<set property="id" value="1636325272870"/>
+			<set property="inputmode" value="readonly"/>
+			<set property="menutype" value="lshp"/>
+			<set property="moreinformation" value="com.ibm.mbs.doc,mbs_common/c_wo_status.html"/>
+		</add>
+		<add container="apa_sias_links_001" control="hyperlink">
+			<set property="align" value="right"/>
+			<set property="id" value="apa_sias_links_001_sa_002"/>
+			<set property="label" value="View Spatial GIS Map"/>
+			<set property="mxevent" value="APA_SIAS_VIEW_STREET_SA"/>
+			<set property="sigoption" value="APA_SIAS_VIEW_STREET_SA"/>
+		</add>
+		<add before="apa_sias_links_001_vic_002" container="apa_sias_links_001" control="hyperlink">
+			<set property="align" value="right"/>
+			<set property="id" value="apa_sias_links_001_sa_001"/>
+			<set property="label" value="View Spatial GIS Map"/>
+			<set property="mxevent" value="APA_SIAS_VIEW_MIRN_SA"/>
+			<set property="sigoption" value="APA_SIAS_VIEW_MIRN_SA"/>
+		</add>
+		<add before="main_grid4_10" container="main_grid41" control="textbox">
+			<set property="dataattribute" value="SFScustreqAPPTSTART"/>
+			<set property="id" value="1647390548617"/>
+			<set property="inputmode" value="readonly"/>
+		</add>
+		<add before="1647390548617" container="main_grid41" control="textbox">
+			<set property="dataattribute" value="sfscreateddate"/>
+			<set property="id" value="1647390549930"/>
+			<set property="inputmode" value="readonly"/>
+		</add>
+		<add before="1647390549930" container="main_grid41" control="textbox">
+			<set property="dataattribute" value="phone"/>
+			<set property="id" value="1645137153320"/>
+		</add>
+		<modify control="main_grid4_10">
+			<set property="dataattribute" value="SFScustreqAPPTFINISH"/>
+			<set property="inputmode" value="readonly"/>
+		</modify>
+		<add before="assignments_assignments_table_tablebody_crew2" container="assignments_assignments_table_tablebody" control="tablecol">
+			<set property="dataattribute" value="amcrew"/>
+			<set property="id" value="1648100742095"/>
+		</add>
+		<add before="1648100742095" container="assignments_assignments_table_tablebody" control="tablecol">
+			<set property="dataattribute" value="amcrewtype"/>
+			<set property="id" value="1647910936266"/>
+			<set property="linkedcontrolid" value="assignments_assignments_table_1_grid1_4"/>
+		</add>
+		<add before="assignments_assignments_table_1_grid1_5" container="assignments_assignments_table_1_grid1" control="multiparttextbox">
+			<set property="applink" value="amcrew"/>
+			<set property="dataattribute" value="amcrew"/>
+			<set property="descdataattribute" value="amcrew.description"/>
+			<set property="descinputmode" value="readonly"/>
+			<set property="id" value="1645484394410"/>
+			<set property="licensekey" value="CREW"/>
+			<set property="lookup" value="amcrews"/>
+			<set property="menutype" value="normal"/>
+			<set property="smartfilloff" value="true"/>
+			<set property="synchronous" value="true"/>
+		</add>
+		<modify control="assignments_assignments_table_1_grid1_5">
+			<set property="applink" value="labor"/>
+			<set property="dataattribute" value="laborcode"/>
+			<set property="descdataattribute" value="labor.person.displayname"/>
+			<set property="lookup" value="laborcraftrate"/>
+		</modify>
+		<modify control="APA_SR_BRTEXT19">
+			<set property="label" value="Owner Group from orig. SR (SM-002)"/>
+		</modify>
+		<add before="APA_SR_BRTEXT17" container="apa_wo_brsection03" control="textbox">
+			<set property="dataattribute" value="SFS_PRESCHED032.OUTPUT3"/>
+			<set property="id" value="1646966191010"/>
+			<set property="inputmode" value="readonly"/>
+			<set property="label" value="Pre-Sched, Use Permit Required (WM-032)"/>
+		</add>
+		<add before="1646966191010" container="apa_wo_brsection03" control="textbox">
+			<set property="dataattribute" value="SFS_PRESCHED032.OUTPUT2"/>
+			<set property="id" value="1646967229537"/>
+			<set property="inputmode" value="readonly"/>
+			<set property="label" value="Pre-Sched, Use Heritage Site (WM-032)"/>
+		</add>
+		<add before="1646967229537" container="apa_wo_brsection03" control="textbox">
+			<set property="dataattribute" value="SFS_PRESCHED032.output1"/>
+			<set property="id" value="1646967230368"/>
+			<set property="inputmode" value="readonly"/>
+			<set property="label" value="Pre-Sched, Use Site Induction (WM-032)"/>
+		</add>
+		<add before="1646967230368" container="apa_wo_brsection03" control="textbox">
+			<set property="dataattribute" value="SFS_postassign.OUTPUT1"/>
+			<set property="id" value="1646966191842"/>
+			<set property="inputmode" value="readonly"/>
+			<set property="label" value="SFS Post Assignment (WM-033)"/>
+		</add>
+		<add before="1646966191842" container="apa_wo_brsection03" control="textbox">
+			<set property="dataattribute" value="SFS_INTTRIGGER.OUTPUT1"/>
+			<set property="id" value="1647314022266"/>
+			<set property="inputmode" value="readonly"/>
+			<set property="label" value="SFS Included (WM-029)"/>
+		</add>
+		<add before="1647314022266" container="apa_wo_brsection03" control="textbox">
+			<set property="dataattribute" value="SFS_EXCTRIGGER.input1"/>
+			<set property="id" value="1646966192624"/>
+			<set property="inputmode" value="readonly"/>
+			<set property="label" value="SFS Excluded (WM-031)"/>
+		</add>
+		<add before="1646966192624" container="apa_wo_brsection03" control="textbox">
+			<set property="dataattribute" value="APA_ISAUTORECEIPT.OUTPUT1"/>
+			<set property="id" value="1646966193341"/>
+			<set property="inputmode" value="readonly"/>
+			<set property="label" value="Auto Receipt PO? (PM-002)"/>
+		</add>
+		<modify control="APA_SR_BRTEXT17">
+			<set property="dataattribute" value="SFS_PRESCHED030.output3"/>
+			<set property="label" value="Pre-sched, Permit Required (WM-030)"/>
+		</modify>
+		<remove container="headera_4_1_1" control="headera_7_loc_req"/>
+		<remove container="headera_10" control="headera_8"/>
+		<remove container="headera_10" control="main_grid4_8"/>
+		<remove container="plans" control="plans_loc_req_table"/>
+		<remove container="assignments_assignments_table_tablebody" control="assignments_assignments_table_tablebody_crew1"/>
+	</app>
+</updatescript>

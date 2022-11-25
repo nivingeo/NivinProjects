@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script SYSTEM "script.dtd">
+
+<script author="VDJ" scriptname="Delete WF">
+  <description>Remove WF $wf revision $rev</description>
+  <statements>
+		<freeform description="Remove WF $wf revision $rev">
+			<sql target="all">   
+				delete from wfprocess 		where processname = '$wf' and processrev = $rev;
+				delete from wfnode    		where processname = '$wf' and processrev = $rev;
+				delete from wftask    		where processname = '$wf' and processrev = $rev;
+				delete from wfassignment    where processname = '$wf' and processrev = $rev;
+
+				delete from wfstart   		where processname = '$wf' and processrev = $rev;
+				delete from wfstop    		where processname = '$wf' and processrev = $rev;
+				delete from wfinput    		where processname = '$wf' and processrev = $rev;
+				delete from wfaction    	where processname = '$wf' and processrev = $rev;
+				delete from wfwaitlist    	where processname = '$wf' and processrev = $rev;
+				delete from wfinteraction   where processname = '$wf' and processrev = $rev;
+				delete from wfcondition    	where processname = '$wf' and processrev = $rev;
+				delete from wfsubprocess    where processname = '$wf' and processrev = $rev;
+				delete from wfnotification  where processname = '$wf' and processrev = $rev;
+				delete from wfasgngroup     where processname = '$wf' and processrev = $rev;
+
+				delete from wfactivation    where processname = '$wf';
+				delete from wfapptoolbar    where processname = '$wf';
+						
+				delete from commtemplate    where templateid in (select distinct a.templateid from wfnotification a where a.processname = '$wf' and a.processrev = $rev);     
+				delete from commtmpltsendto where templateid in (select distinct a.templateid from wfnotification a where a.processname = '$wf' and a.processrev = $rev);             
+				delete from maxrole         where maxrole    in (select distinct a.roleid     from wfassignment   a where a.processname = '$wf' and a.processrev = $rev);
+				delete from action          where action     in (select distinct a.action     from wfaction       a where a.processname = '$wf' and a.processrev = $rev and a.action is not null);                         	  
+				delete from action          where action     in (select ag.member from actiongroup ag where ag.action in (select distinct a.action from WFACTION a where a.action is not null and a.processname = '$wf' and a.processrev = $rev));   
+				delete from actiongroup     where action     in (select distinct a.action from WFACTION a where a.action is not null and a.processname = '$wf' and a.processrev = $rev);
+			</sql>
+		</freeform>
+	</statements>
+</script>
+    

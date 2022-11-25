@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updatescript version="7.5.0.0">
+	<app apptype="webclient" id="apamtrtype">
+		<modify control="mtrgrp_tbl_dtl_5">
+			<set property="inputmode" value="readonly"/>
+			<clear property="lookup"/>
+		</modify>
+	</app>
+</updatescript>

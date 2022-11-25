@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updatescript version="7.1.0.0">
+	<systemlib apptype="webclient" id="lookups">
+		<add before="classstructure" container="lookups" control="table">
+			<set property="id" value="detschedclass"/>
+			<set property="inputmode" value="readonly"/>
+			<set property="selectmode" value="single"/>
+		</add>
+		<add container="detschedclass" control="tablebody">
+			<set property="displayrowsperpage" value="20"/>
+			<set property="filterable" value="true"/>
+			<set property="filterexpanded" value="true"/>
+			<set property="id" value="detschedclass_lookup_tablebody"/>
+		</add>
+		<add container="detschedclass_lookup_tablebody" control="tablecol">
+			<set property="dataattribute" value="classstructureid"/>
+			<set property="id" value="detschedclass_lookup_tablebody_col_2"/>
+			<set property="mxevent" value="selectrecord"/>
+			<set property="mxevent_desc" value="Go To %1"/>
+			<set property="sortable" value="true"/>
+			<set property="type" value="link"/>
+		</add>
+		<add container="detschedclass_lookup_tablebody" control="tablecol">
+			<set property="dataattribute" value="description"/>
+			<set property="id" value="detschedclass_lookup_tablebody_col_3"/>
+			<set property="mxevent" value="selectrecord"/>
+			<set property="mxevent_desc" value="Go To %1"/>
+			<set property="sortable" value="true"/>
+			<set property="type" value="link"/>
+		</add>
+		<add before="address" container="lookups" control="table">
+			<set property="id" value="enrolmentslookup"/>
+			<set property="inputmode" value="readonly"/>
+			<set property="selectmode" value="single"/>
+		</add>
+		<add container="enrolmentslookup" control="tablebody">
+			<set property="displayrowsperpage" value="20"/>
+			<set property="filterable" value="true"/>
+			<set property="filterexpanded" value="true"/>
+			<set property="id" value="enrolments_lookup_tablebody"/>
+		</add>
+		<add container="enrolments_lookup_tablebody" control="tablecol">
+			<set property="dataattribute" value="enrolmentid"/>
+			<set property="id" value="enrolments_lookup_tablebody_col_1"/>
+			<set property="mxevent" value="selectrecord"/>
+			<set property="mxevent_desc" value="Go To %1"/>
+			<set property="sortable" value="true"/>
+			<set property="type" value="link"/>
+		</add>
+	</systemlib>
+</updatescript>

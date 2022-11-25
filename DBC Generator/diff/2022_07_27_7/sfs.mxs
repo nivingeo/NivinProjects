@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updatescript version="6.0.0">
+	<app apptype="webclient" id="sfs">
+		<modify control="1639007558292">
+			<set property="applink" value="PLUSGWO,PLUSGQRP"/>
+			<set property="menutype" value="HYPERLINK"/>
+		</modify>
+		<modify control="1644967675866">
+			<set property="applink" value="PLUSGWO,PLUSGQRP"/>
+			<set property="menutype" value="HYPERLINK"/>
+		</modify>
+	</app>
+</updatescript>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updatescript version="7.1.0.0">
+	<app apptype="webclient" id="location">
+		<add container="specifications" control="table">
+			<set property="id" value="ScheduleClass_table"/>
+			<set property="label" value="Schedule Classification"/>
+			<set property="relationship" value="DETSCHEDCLASS"/>
+		</add>
+		<add container="ScheduleClass_table" control="tablebody">
+			<set property="displayrowsperpage" value="10"/>
+			<set property="filterable" value="true"/>
+			<set property="id" value="ScheduleClass_table_tablebody"/>
+		</add>
+		<add container="ScheduleClass_table_tablebody" control="tablecol">
+			<set property="dataattribute" value="y0to6"/>
+			<set property="id" value="ScheduleClass_table_tablebody_2"/>
+			<set property="lookup" value="detschedclass"/>
+		</add>
+		<add container="ScheduleClass_table_tablebody" control="tablecol">
+			<set property="dataattribute" value="y0to6.description"/>
+			<set property="id" value="ScheduleClass_table_tablebody_2aa"/>
+			<set property="inputmode" value="readonly"/>
+		</add>
+		<add container="ScheduleClass_table_tablebody" control="tablecol">
+			<set property="dataattribute" value="y7to10"/>
+			<set property="id" value="ScheduleClass_table_tablebody_3"/>
+			<set property="lookup" value="detschedclass"/>
+		</add>
+		<add container="ScheduleClass_table_tablebody" control="tablecol">
+			<set property="dataattribute" value="y7to10.description"/>
+			<set property="id" value="ScheduleClass_table_tablebody_2aaa"/>
+			<set property="inputmode" value="readonly"/>
+		</add>
+		<add container="ScheduleClass_table_tablebody" control="tablecol">
+			<set property="dataattribute" value="y11to12"/>
+			<set property="id" value="ScheduleClass_table_tablebody_4"/>
+			<set property="lookup" value="detschedclass"/>
+		</add>
+		<add container="ScheduleClass_table_tablebody" control="tablecol">
+			<set property="dataattribute" value="y11to12.description"/>
+			<set property="id" value="ScheduleClass_table_tablebody_2asd"/>
+			<set property="inputmode" value="readonly"/>
+		</add>
+		<add container="ScheduleClass_table_tablebody" control="tablecol">
+			<set property="dataattribute" value="other"/>
+			<set property="id" value="ScheduleClass_table_tablebody_5"/>
+			<set property="lookup" value="detschedclass"/>
+		</add>
+		<add container="ScheduleClass_table_tablebody" control="tablecol">
+			<set property="dataattribute" value="other.description"/>
+			<set property="id" value="ScheduleClass_table_tablebody_2asdasd"/>
+			<set property="inputmode" value="readonly"/>
+		</add>
+		<add container="ScheduleClass_table_tablebody" control="tablecol">
+			<set property="filterable" value="false"/>
+			<set property="hidden" value="false"/>
+			<set property="id" value="ScheduleClass_tablebody_10"/>
+			<set property="mxevent" value="toggledeleterow"/>
+			<set property="mxevent_desc" value="Mark Row for Delete"/>
+			<set property="mxevent_icon" value="btn_garbage.gif"/>
+			<set property="sortable" value="false"/>
+			<set property="type" value="event"/>
+		</add>
+		<add container="ScheduleClass_table" control="buttongroup">
+			<set property="id" value="ScheduleClass_table_2"/>
+		</add>
+		<add container="ScheduleClass_table_2" control="pushbutton">
+			<set property="default" value="true"/>
+			<set property="id" value="ScheduleClass_2_1"/>
+			<set property="label" value="New Row"/>
+			<set property="mxevent" value="addrow"/>
+		</add>
+	</app>
+</updatescript>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updatescript version="6.0.0">
+	<app apptype="webclient" id="sfs">
+		<modify control="results_showlist">
+			<set property="startempty" value="false"/>
+		</modify>
+		<add before="results_bookmark" container="results_showlist_tablebody" control="tablecol">
+			<set property="dataattribute" value="SYSCOMMENT"/>
+			<set property="id" value="1658810364664"/>
+		</add>
+		<add before="sfs1b" container="sfs303" control="textbox">
+			<set property="dataattribute" value="SFSDetail.ValidationClass"/>
+			<set property="id" value="sfs15"/>
+			<set property="inputmode" value="readonly"/>
+			<set property="width" value="127"/>
+		</add>
+	</app>
+</updatescript>

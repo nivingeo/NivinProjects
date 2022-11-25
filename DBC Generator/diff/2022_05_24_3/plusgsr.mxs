@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updatescript version="7.1.0.0">
+	<app apptype="webclient" id="plusgsr">
+		<add before="selectauditonrelatedrec" container="plusgsr" control="dialog">
+			<set property="beanclass" value="psdi.webclient.beans.common.ChangeStatusBean"/>
+			<set property="id" value="SFSCANREQ"/>
+			<set property="label" value="Cancelation Request"/>
+			<set property="relationship" value="SFSCANREQ"/>
+			<set property="savemode" value="ONUNLOAD"/>
+		</add>
+		<add container="SFSCANREQ" control="section">
+			<set property="id" value="sfscanreq24"/>
+		</add>
+		<add container="sfscanreq24" control="statictext">
+			<set property="align" value="left"/>
+			<set property="id" value="sfscanreq2"/>
+			<set property="label" value="&lt;B&gt;Change status to CANREQ will trigger integration.&lt;/B&gt;"/>
+		</add>
+		<add container="sfscanreq24" control="blankline">
+			<set property="id" value="sfscanreq3"/>
+		</add>
+		<add container="sfscanreq24" control="multiparttextbox">
+			<set property="dataattribute" value="TICKETID"/>
+			<set property="datasrc" value="MAINRECORD"/>
+			<set property="descdataattribute" value="description"/>
+			<set property="descinputmode" value="readonly"/>
+			<set property="id" value="sfscanreq4"/>
+			<set property="inputmode" value="readonly"/>
+		</add>
+		<add container="sfscanreq24" control="textbox">
+			<set property="dataattribute" value="status"/>
+			<set property="id" value="sfscanreq5"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="width" value="128"/>
+		</add>
+		<add container="sfscanreq24" control="textbox">
+			<set property="dataattribute" value="AsOfDate"/>
+			<set property="id" value="sfscanreq6"/>
+			<set property="inputmode" value="READONLY"/>
+		</add>
+		<add container="sfscanreq24" control="textbox">
+			<set property="dataattribute" value="Memo"/>
+			<set property="id" value="sfscanreq7"/>
+			<set property="inputmode" value="REQUIRED"/>
+			<set property="label" value="Reason"/>
+			<set property="width" value="407"/>
+		</add>
+		<add container="SFSCANREQ" control="buttongroup">
+			<set property="id" value="sfscanreq8"/>
+		</add>
+		<add container="sfscanreq8" control="pushbutton">
+			<set property="default" value="true"/>
+			<set property="id" value="sfscanreq9"/>
+			<set property="label" value="OK"/>
+			<set property="mxevent" value="dialogok"/>
+		</add>
+		<add container="sfscanreq8" control="pushbutton">
+			<set property="id" value="sfscanreq10"/>
+			<set property="label" value="Cancel"/>
+			<set property="mxevent" value="dialogcancel"/>
+		</add>
+		<add before="searchmore" container="plusgsr" control="dialog">
+			<set property="beanclass" value="psdi.webclient.beans.common.ChangeStatusBean"/>
+			<set property="id" value="LIST_SFSCANREQ"/>
+			<set property="label" value="Bulk Cancelation Request"/>
+			<set property="relationship" value="SFSCANREQ"/>
+			<set property="savemode" value="ONLOADUNLOAD"/>
+		</add>
+		<add container="LIST_SFSCANREQ" control="section">
+			<set property="id" value="list_sfscanreq24"/>
+		</add>
+		<add container="list_sfscanreq24" control="statictext">
+			<set property="align" value="left"/>
+			<set property="id" value="list_sfscanreq11"/>
+			<set property="label" value="&lt;B&gt;Change status to CANREQ will trigger integration.&lt;/B&gt;"/>
+		</add>
+		<add container="list_sfscanreq24" control="blankline">
+			<set property="id" value="list_sfscanreq12"/>
+		</add>
+		<add container="list_sfscanreq24" control="textbox">
+			<set property="dataattribute" value="status"/>
+			<set property="id" value="list_sfscanreq13"/>
+			<set property="inputmode" value="READONLY"/>
+			<set property="width" value="128"/>
+		</add>
+		<add container="list_sfscanreq24" control="textbox">
+			<set property="dataattribute" value="AsOfDate"/>
+			<set property="id" value="list_sfscanreq14"/>
+			<set property="inputmode" value="READONLY"/>
+		</add>
+		<add container="list_sfscanreq24" control="textbox">
+			<set property="dataattribute" value="Memo"/>
+			<set property="id" value="list_sfscanreq15"/>
+			<set property="inputmode" value="REQUIRED"/>
+			<set property="label" value="Reason"/>
+			<set property="width" value="407"/>
+		</add>
+		<add container="LIST_SFSCANREQ" control="buttongroup">
+			<set property="id" value="list_sfscanreq16"/>
+		</add>
+		<add container="list_sfscanreq16" control="pushbutton">
+			<set property="default" value="true"/>
+			<set property="id" value="list_sfscanreq17"/>
+			<set property="label" value="OK"/>
+			<set property="mxevent" value="dialogok"/>
+		</add>
+		<add container="list_sfscanreq16" control="pushbutton">
+			<set property="id" value="list_sfscanreq18"/>
+			<set property="label" value="Cancel"/>
+			<set property="mxevent" value="dialogcancel"/>
+		</add>
+		<add container="pra_dates_sectcol1" control="textbox">
+			<set property="dataattribute" value="sfsapptwindow"/>
+			<set property="id" value="1643930489873"/>
+			<set property="label" value="Appt. Time"/>
+			<set property="lookup" value="time"/>
+		</add>
+		<remove container="pra_dates_sectcol1" control="1485829386297"/>
+		<remove container="pra_dates_sectcol1" control="1485829390132"/>
+	</app>
+</updatescript>
